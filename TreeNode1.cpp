@@ -1,3 +1,4 @@
+#include "TreeNode1.h"
 //default constructor
 TreeNode1::TreeNode1(){
   key=0;
