@@ -1,0 +1,10 @@
+string name
+integer faculty ID
+string level (lecturer, assistant prof, associate prof)
+string department
+list of integers of student ID (faculty's advisees)
+
+Erin, 5, lecturer, graphic design, [2,3]
+Bob, 7, assistant prof, English, [4,5]
+Philip, 8, associate prof, psychology, [6,7]
+Katie, 9, lecturer, music, [8,9]
