@@ -1,3 +1,5 @@
+#include "TreeNode1.cpp"
+
 class BSTree1{
   public:
     BSTree1();
