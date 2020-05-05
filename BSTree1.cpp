@@ -1,3 +1,5 @@
+#include "BSTree1.h"
+
 //overloaded constructor
 BSTree1::BSTree1(){
   //we don't have a node yet, root is null
