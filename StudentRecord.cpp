@@ -1,7 +1,7 @@
 #include<fstream>
 #include "BSTree1.cpp"
 
-//string addStudentTree(){
+string addStudentTree(){
 
 //open and read from student file
 
@@ -30,10 +30,12 @@
           cout << StudentLine[z] << endl;
 
   //  masterStudent->insert(StudentLine);
-    }// end while
-  }//end else if
+}// end for
+}//end while
   StudentFile.close();
 
-  //return masterStudent;
-//}
+  return masterStudent;
+
+   }// end else if
+
 }
