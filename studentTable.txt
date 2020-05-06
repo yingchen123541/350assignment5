@@ -1,8 +1,8 @@
-David, 2, freshman, graphic design, 3.56, 5
-Peter, 3, freshman, computer science, 3.65, 5
-Anna, 4, sophomore, English, 3.89, 7
-Chloe, 5, sophomore, Spanish, 3.87, 7
-Hannah, 6, junior, Psychology, 3.76, 8
-Wyatt, 7, junior, Psychology, 2.56, 8
-Sophie, 8, senior, music, 3.12, 9
-Rose, 9, senior, music, 3.33, 9
+2, David, freshman, graphic design, 3.56, 5
+3, Peter, freshman, computer science, 3.65, 5
+4, Anna, sophomore, English, 3.89, 7
+5, Chloe, sophomore, Spanish, 3.87, 7
+6, Hannah, junior, Psychology, 3.76, 8
+7, Wyatt, junior, Psychology, 2.56, 8
+8, Sophie, senior, music, 3.12, 9
+9, Rose, senior, music, 3.33, 9
