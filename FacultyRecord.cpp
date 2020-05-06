@@ -1,6 +1,7 @@
 #include<fstream>
 #include "BSTree1.cpp"
 
+
 //function to add faculty information into tree
 string addFacultyTree(){
 
@@ -8,6 +9,7 @@ string addFacultyTree(){
 ifstream FacultyFile;
 FacultyFile.open("facultyTable.txt");
 string FacultyLine;
+string FacultyID;
 
 if(!FacultyFile)
 {
@@ -21,14 +23,19 @@ else if (FacultyFile)
   BSTree1 *masterFaculty = new BSTree1(10);
   while (getline(FacultyFile, FacultyLine))
   {
-    //for now only print out information line by line
-    //maybe we can search through each line and do .contains(studentID) when need to print out information base on ID
-    //or should we seperate each line by comma? but how to store in trees? how many tree nodes to use for one faculty's information?
-  cout << FacultyLine << endl;
-  masterFaculty->insert(FacultyLine);
+    for(int z=0; z < 1; z++)
+    {
+      //only read the first character in each line
+         FacultyID = FacultyLine.substr(z,1);
+        cout << FacultyLine[z] << endl;
+}// end for
+
+  //masterFaculty->insert(FacultyLine);
   }// end while
 
 }//end else if
 
-return masterFaculty;
+
+//return masterFaculty;
+FacultyFile.close();
 }//end add tree
