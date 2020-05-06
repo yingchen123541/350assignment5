@@ -36,6 +36,6 @@ else if (FacultyFile)
 }//end else if
 
 
-//return masterFaculty;
+return masterFaculty;
 FacultyFile.close();
 }//end add tree
