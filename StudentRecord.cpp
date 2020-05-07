@@ -43,8 +43,8 @@ int main(){
 
 ///////////////nidhi start looking from here
 
-    BST<T> *masterFaculty = new BST<T>;
-   masterFaculty->insert(T node , int k)
+    BST<T> *masterStudent = new BST<T>;
+   masterStudent->insert(T node , int k)
    k=StudentID;
    node=StudentLine;
 ////////nidhi end
