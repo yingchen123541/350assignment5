@@ -3,10 +3,11 @@
 
 #include <iostream>
 #include <fstream>
-#include "binarytree.h"
+//#include "binarytree.h"
+#include "YukiBSTree1.cpp"
 
 int main(){
-  template <class T>
+  //template <class T>
 
   using namespace std;
 //template <class T>
@@ -19,6 +20,7 @@ int main(){
   StudentFile.open("studentTable.txt");
   string StudentLine;
   string StudentID;
+  int StudentID1;
 
 
   if(!StudentFile)
@@ -32,21 +34,21 @@ int main(){
   else if (StudentFile)
   {
     //studentTable successfully opened, add content into masterStudent tree
-  //  BSTree1 *masterStudent = new BSTree1(10);
     while (getline(StudentFile, StudentLine))
     {
       for(int z=0; z < 1; z++)
       {
         //only read the first character in each line
            StudentID = StudentLine.substr(z,1);
+           StudentID1 = stoi(StudentID);
           cout << StudentLine[z] << endl;
 
-///////////////nidhi start looking from here
+    YukiBSTree1 *masterStudent = new YukiBSTree1;
+    masterStudent->insert(StudentID1);
 
-    BST<T> *masterStudent = new BST<T>;
-   masterStudent->insert(T node , int k)
-   k=StudentID;
-   node=StudentLine;
+
+
+  // node=StudentLine;
 ////////nidhi end
 
 }// end for
