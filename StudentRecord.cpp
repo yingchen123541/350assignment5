@@ -39,3 +39,7 @@ string addStudentTree(){
    }// end else if
 
 }
+//add an add functions
+//add a delete functions
+//print advisor function?
+//print all students function
