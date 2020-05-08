@@ -1,41 +1,46 @@
 #include<fstream>
-#include "BSTree1.cpp"
+#include "binarytree.h"
+
 
 
 //function to add faculty information into tree
-string addFacultyTree(){
+//string addFacultyTree(){
 
 //open and read from faculty file
 ifstream FacultyFile;
 FacultyFile.open("facultyTable.txt");
 string FacultyLine;
 string FacultyID;
+int FacultyID1;
 
 if(!FacultyFile)
 {
   cerr << "faculty file doesn't exist, empty tree" << endl;
   //initialize empty faculty tree
-  BSTree1 *masterFaculty = new BSTree1(10);
+
 }//end if
 else if (FacultyFile)
 {
   //facultyTable successfully opened, add content into masterFaculty tree
-  BSTree1 *masterFaculty = new BSTree1(10);
   while (getline(FacultyFile, FacultyLine))
   {
     for(int z=0; z < 1; z++)
     {
       //only read the first character in each line
          FacultyID = FacultyLine.substr(z,1);
+         FacultyID1 = stoi(FacultyID);
         cout << FacultyLine[z] << endl;
+
+        YukiBSTree1 *masterFaculty = new YukiBSTree1;
+        masterFaculty->insert(FacultyID1);
 }// end for
 
-  //masterFaculty->insert(FacultyLine);
-  }// end while
 
+  }// end while
+FacultyFile.close();
 }//end else if
 
 
-return masterFaculty;
-FacultyFile.close();
-}//end add tree
+//return masterFaculty;
+
+//}//end add tree
