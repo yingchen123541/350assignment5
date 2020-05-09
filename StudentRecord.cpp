@@ -1,5 +1,3 @@
-//http://www.cplusplus.com/doc/oldtutorial/templates/
-//https://www.geeksforgeeks.org/binary-tree-set-1-introduction/
 
 
 #include "StudentRecord.h"
@@ -23,13 +21,11 @@ StudentRecord::~StudentRecord()
 
 }
 
-
-
 void StudentRecord::option1(){
   StudentFile.open("studentTable.txt");
   if(!StudentFile)
   {
-    cerr << "student file doesn't exist, empty tree" << endl;
+    std::cerr << "student file doesn't exist, empty tree" << std::endl;
     //initialize empty student tree
   }//end if
   else if (StudentFile)
@@ -42,9 +38,12 @@ void StudentRecord::option1(){
         //only read the first character in each line
            StudentID = StudentLine.substr(z,1);
            StudentID1 = stoi(StudentID);
+           BST<string> *masterStudent = new BST<string>;
+           masterStudent->insert(StudentLine,StudentID1);
+
            //make an array, add StudentLine[z] to array.
            //cout << StudentLine[z] << endl;
-           cout << StudentLine << endl;
+           std::cout << StudentLine << std::endl;
 
         }// end for
     ///////////////////////////////////////////
@@ -56,7 +55,7 @@ void StudentRecord::option1(){
       //  return StudentLine;
           StudentFile.close();
            }// end else if
-//return "1";
+
 }
 
 

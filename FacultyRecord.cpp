@@ -1,23 +1,35 @@
-#include<fstream>
-#include "binarytree.h"
+
+#include "FacultyRecord.h"
 
 
-
-//function to add faculty information into tree
-//string addFacultyTree(){
-
-//open and read from faculty file
-ifstream FacultyFile;
-FacultyFile.open("facultyTable.txt");
-string FacultyLine;
-string FacultyID;
-int FacultyID1;
-
-if(!FacultyFile)
+//default constructor
+FacultyRecord::FacultyRecord()
 {
-  cerr << "faculty file doesn't exist, empty tree" << endl;
-  //initialize empty faculty tree
+  m_FacultyLine="unknown";
+  m_FacultyID="unknown";
+  m_FacultyID1=-1;
+}
 
+//overload constructor
+FacultyRecord::FacultyRecord(int FacultyID1)
+{
+  m_FacultyLine=FacultyLine;
+  m_FacultyID=FacultyID;
+  m_FacultyID1=FacultyID1;
+}
+
+FacultyRecord::~FacultyRecord()
+{
+
+}
+
+void FacultyRecord::option2(){
+ //open and read from faculty file
+ FacultyFile.open("facultyTable.txt");
+ if(!FacultyFile)
+ {
+   std::cerr << "faculty file doesn't exist, empty tree" << std::endl;
+  //initialize empty faculty tree
 }//end if
 else if (FacultyFile)
 {
@@ -29,18 +41,13 @@ else if (FacultyFile)
       //only read the first character in each line
          FacultyID = FacultyLine.substr(z,1);
          FacultyID1 = stoi(FacultyID);
-        cout << FacultyLine[z] << endl;
+         BST<string> *masterFaculty = new BST<string>;
+         masterFaculty->insert(FacultyLine,FacultyID1);
+        std::cout << FacultyLine << std::endl;
 
-        YukiBSTree1 *masterFaculty = new YukiBSTree1;
-        masterFaculty->insert(FacultyID1);
-}// end for
-
-
+        }// end for
   }// end while
 FacultyFile.close();
 }//end else if
 
-
-//return masterFaculty;
-
-//}//end add tree
+}//end option2

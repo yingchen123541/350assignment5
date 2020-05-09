@@ -1,4 +1,4 @@
-#include "binarytree.cpp"
+
 #include <iostream>
 #include <fstream>
 
@@ -7,13 +7,13 @@ class StudentRecord{
      StudentRecord();
      StudentRecord(int StudentID1);
      ~StudentRecord();
-     ifstream StudentFile;
-     string StudentLine;
-     string StudentID;
+     std::ifstream StudentFile;
+     std::string StudentLine;
+     std::string StudentID;
      int StudentID1;
 //add getters and setters
-     string m_StudentLine;
-     string m_StudentID;
+     std::string m_StudentLine;
+     std::string m_StudentID;
      int m_StudentID1;
 
 
