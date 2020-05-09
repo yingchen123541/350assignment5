@@ -3,21 +3,25 @@
 // tree name: masterFaculty, masterStudent
 
 
-//#include "StudentRecord.cpp"
+
+#include "binarytree.cpp"
 //#include "FacultyRecord.cpp"
-#include "binarytree.h"
-#include "doublelinkedlist.cpp"
+//#include "doublelinkedlist.cpp"
 
 
 using namespace std;
 
 int main(){
-  //string c;
-  //string d;
-  //this should print out the stuffs I added into trees in studentrecord and facultyrecord class
-  //but my tree classes are not working
-//  c->addStudentTree();
-  //d->addFacultyTree();
+  ifstream StudentFile;
+  string StudentLine;
+  string StudentID;
+  int StudentID1;
+
+  ifstream FacultyFile;
+  string FacultyLine;
+  string FacultyID;
+  int FacultyID1;
+
 
 //output menu information
    for (int i=0; i<1000; i++){
@@ -44,13 +48,58 @@ int main(){
    if (choice==1)
    {
      cout << "Print all students and their information" << endl;
-     //code
+     StudentFile.open("studentTable.txt");
+     if(!StudentFile)
+     {
+       cerr << "student file doesn't exist, empty tree" << endl;
+       //initialize empty student tree
+     }//end if
+     else if (StudentFile)
+     {
+       //studentTable successfully opened, add content into masterStudent tree
+       while (getline(StudentFile, StudentLine))
+       {
+         for(int z=0; z < 1; z++)
+         {
+           //only read the first character in each line
+              StudentID = StudentLine.substr(z,1);
+              StudentID1 = stoi(StudentID);
+              BST<string> *masterStudent = new BST<string>;
+              masterStudent->insert(StudentLine,StudentID1);
+             cout << StudentLine << endl;
+
+           }// end for
+           }//end while
+              }// end else if
    }//end if
    else if (choice==2)
    {
      cout << "Print all faculty and their information" << endl;
-     //code
+     FacultyFile.open("facultyTable.txt");
+     if(!FacultyFile)
+     {
+       cerr << "faculty file doesn't exist, empty tree" << endl;
+       //initialize empty faculty tree
+
+     }//end if
+     else if (FacultyFile)
+     {
+       //facultyTable successfully opened, add content into masterFaculty tree
+       while (getline(FacultyFile, FacultyLine))
+       {
+         for(int z=0; z < 1; z++)
+         {
+           //only read the first character in each line
+              FacultyID = FacultyLine.substr(z,1);
+              FacultyID1 = stoi(FacultyID);
+              BST<string> *masterFaculty = new BST<string>;
+              masterFaculty->insert(FacultyLine,FacultyID1);
+             cout << FacultyLine << endl;
+           }// end for
+           }//end while
+             FacultyFile.close();
    }//end else if
+ }//end else if
    else if (choice==3)
    {
      cout << "Find and display student information given the students id" << endl;
@@ -112,7 +161,11 @@ int main(){
      exit(1);
    }//end else if
 
+   StudentFile.close();
+   FacultyFile.close();
  }// end for
+
+
 
 
 
