@@ -41,7 +41,7 @@ else if (FacultyFile)
   while (getline(FacultyFile, FacultyLine))
   {
       //only read the first character in each line
-         FacultyID = FacultyLine.substr(z,1);
+         FacultyID = FacultyLine.substr(0,1);
          FacultyID1 = stoi(FacultyID);
          masterFaculty->insert(FacultyLine,FacultyID1);
         std::cout << FacultyLine << std::endl;
