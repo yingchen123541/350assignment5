@@ -1,51 +1,71 @@
-#include<fstream>
-#include "binarytree.h"
-
 ///same as student
 // add advisees
 //remove a
 //print advisees
 //these three methods, u must use a list. we make a list.
 
+#include "FacultyRecord.h"
+ #include <algorithm>
 
-//function to add faculty information into tree
-//string addFacultyTree(){
 
-//open and read from faculty file
-ifstream FacultyFile;
-FacultyFile.open("facultyTable.txt");
-string FacultyLine;
-string FacultyID;
-int FacultyID1;
-
-if(!FacultyFile)
+//default constructor
+FacultyRecord::FacultyRecord()
 {
-  cerr << "faculty file doesn't exist, empty tree" << endl;
-  //initialize empty faculty tree
+  m_FacultyLine="unknown";
+  m_FacultyID="unknown";
+  m_FacultyID1=-1;
+  m_totalLine=0;
+}
 
+//overload constructor
+FacultyRecord::FacultyRecord(int FacultyID1)
+{
+  m_FacultyLine=FacultyLine;
+  m_FacultyID=FacultyID;
+  m_FacultyID1=FacultyID1;
+  m_totalLine=totalLine;
+}
+
+FacultyRecord::~FacultyRecord()
+{
+
+}
+
+void FacultyRecord::option2(){
+ //open and read from faculty file
+ FacultyFile.open("facultyTable.txt");
+ if(!FacultyFile)
+ {
+   std::cerr << "faculty file doesn't exist, empty tree" << std::endl;
+  //initialize empty faculty tree
 }//end if
 else if (FacultyFile)
 {
   //facultyTable successfully opened, add content into masterFaculty tree
+  int IDArray[100];\
+  BST<string> *masterFaculty = new BST<string>;
   while (getline(FacultyFile, FacultyLine))
   {
-    for(int z=0; z < 1; z++)
-    {
       //only read the first character in each line
-         FacultyID = FacultyLine.substr(z,1);
+         FacultyID = FacultyLine.substr(0,1);
          FacultyID1 = stoi(FacultyID);
-        cout << FacultyLine[z] << endl;
+         masterFaculty->insert(FacultyLine,FacultyID1);
+        std::cout << FacultyLine << std::endl;
 
-        YukiBSTree1 *masterFaculty = new YukiBSTree1;
-        masterFaculty->insert(FacultyID1);
-}// end for
-
-
+        totalLine=totalLine+1;
   }// end while
+
+  sort(IDArray, IDArray + totalLine);
+  for (int a=0; a!=totalLine; ++a)
+  {
+    cout << IDArray[a] << endl;
+
+
+    /////////not sure what to put inside printTree method /////////
+    masterFaculty->printTree(IDArray[a]);
+  }// end for
+
 FacultyFile.close();
 }//end else if
 
-
-//return masterFaculty;
-
-//}//end add tree
+}//end option2
