@@ -1,6 +1,11 @@
 #include<fstream>
 #include "binarytree.h"
 
+///same as student
+// add advisees
+//remove a
+//print advisees
+//these three methods, u must use a list. we make a list.
 
 
 //function to add faculty information into tree
