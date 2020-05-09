@@ -1,35 +1,36 @@
 //http://www.cplusplus.com/doc/oldtutorial/templates/
 //https://www.geeksforgeeks.org/binary-tree-set-1-introduction/
 
-#include <iostream>
-#include <fstream>
-//#include "binarytree.h"
-#include "YukiBSTree1.cpp"
 
-int main(){
-  //template <class T>
+#include "StudentRecord.h"
+//default constructor
+StudentRecord::StudentRecord()
+{
+  m_StudentLine="unknown";
+  m_StudentID="unknown";
+  m_StudentID1=-1;
+}
+//overload constructor
+/*StudentRecord::StudentRecord(int StudentID1)
+{
+  m_StudentLine=StudentLine;
+  m_StudentID=StudentID;
+  m_StudentID1=StudentID1;
+}
 
-  using namespace std;
-//template <class T>
+StudentRecord::~StudentRecord()
+{
 
-//string addStudentTree(){
+}
 
-//open and read from student file
 
-  ifstream StudentFile;
+/*
+void StudentRecord::option1(){
   StudentFile.open("studentTable.txt");
-  string StudentLine;
-  string StudentID;
-  int StudentID1;
-
-
   if(!StudentFile)
   {
     cerr << "student file doesn't exist, empty tree" << endl;
     //initialize empty student tree
-
-
-
   }//end if
   else if (StudentFile)
   {
@@ -41,27 +42,37 @@ int main(){
         //only read the first character in each line
            StudentID = StudentLine.substr(z,1);
            StudentID1 = stoi(StudentID);
-          cout << StudentLine[z] << endl;
+        //  cout << StudentLine[z] << endl;
+        //  cout << StudentLine << endl;
 
-    YukiBSTree1 *masterStudent = new YukiBSTree1;
-    masterStudent->insert(StudentID1);
-
-
-
-  // node=StudentLine;
-////////nidhi end
-
-}// end for
-}//end while
-  StudentFile.close();
-
-//  return masterStudent;
-
-   }// end else if
-
-//}
+        }// end for
+        }//end while
+          StudentFile.close();
+           }// end else if
 
 }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //add an add functions
 //add a delete functions
 //print advisor function?
