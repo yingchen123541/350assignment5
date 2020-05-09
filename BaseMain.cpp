@@ -4,8 +4,9 @@
 
 
 
-#include "binarytree.cpp"
+//#include "binarytree.cpp"
 //#include "FacultyRecord.cpp"
+#include "StudentRecord.cpp"
 //#include "doublelinkedlist.cpp"
 
 
@@ -26,6 +27,7 @@ int main(){
 //output menu information
    for (int i=0; i<1000; i++){
    cout << "Here's the menu: " << endl;
+   //try 1 + 2 with arrays to sort (extra lol)
    cout << "1. Print all students and their information (sorted by ascending id #)" << endl;
    cout << "2. Print all faculty and their information (sorted by ascending id #)" << endl;
    cout << "3. Find and display student information given the students id" << endl;
@@ -47,31 +49,36 @@ int main(){
 
    if (choice==1)
    {
-     cout << "Print all students and their information" << endl;
-     StudentFile.open("studentTable.txt");
-     if(!StudentFile)
-     {
-       cerr << "student file doesn't exist, empty tree" << endl;
-       //initialize empty student tree
-     }//end if
-     else if (StudentFile)
-     {
-       //studentTable successfully opened, add content into masterStudent tree
-       while (getline(StudentFile, StudentLine))
-       {
-         for(int z=0; z < 1; z++)
-         {
-           //only read the first character in each line
-              StudentID = StudentLine.substr(z,1);
-              StudentID1 = stoi(StudentID);
-              BST<string> *masterStudent = new BST<string>;
-              masterStudent->insert(StudentLine,StudentID1);
-             cout << StudentLine << endl;
-
-           }// end for
-           }//end while
-              }// end else if
-   }//end if
+     StudentRecord* printstud = new StudentRecord();
+     //delim* sourcecode = new delim()
+      printstud -> option1();
+   //     masterStudent->insert(StudentLine,StudentID1);
+   //
+   //   cout << "Print all students and their information" << endl;
+   //   StudentFile.open("studentTable.txt");
+   //   if(!StudentFile)
+   //   {
+   //     cerr << "student file doesn't exist, empty tree" << endl;
+   //     //initialize empty student tree
+   //   }//end if
+   //   else if (StudentFile)
+   //   {
+   //     //studentTable successfully opened, add content into masterStudent tree
+   //     while (getline(StudentFile, StudentLine))
+   //     {
+   //       for(int z=0; z < 1; z++)
+   //       {
+   //         //only read the first character in each line
+   //            StudentID = StudentLine.substr(z,1);
+   //            StudentID1 = stoi(StudentID);
+   //            BST<string> *masterStudent = new BST<string>;
+   //            masterStudent->insert(StudentLine,StudentID1);
+   //           cout << StudentLine << endl;
+   //
+   //         }// end for
+   //         }//end while
+   //            }// end else if
+    }//end if
    else if (choice==2)
    {
      cout << "Print all faculty and their information" << endl;

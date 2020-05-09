@@ -11,7 +11,7 @@ StudentRecord::StudentRecord()
   m_StudentID1=-1;
 }
 //overload constructor
-/*StudentRecord::StudentRecord(int StudentID1)
+StudentRecord::StudentRecord(int StudentID1)
 {
   m_StudentLine=StudentLine;
   m_StudentID=StudentID;
@@ -24,7 +24,7 @@ StudentRecord::~StudentRecord()
 }
 
 
-/*
+
 void StudentRecord::option1(){
   StudentFile.open("studentTable.txt");
   if(!StudentFile)
@@ -42,16 +42,22 @@ void StudentRecord::option1(){
         //only read the first character in each line
            StudentID = StudentLine.substr(z,1);
            StudentID1 = stoi(StudentID);
-        //  cout << StudentLine[z] << endl;
-        //  cout << StudentLine << endl;
+           //make an array, add StudentLine[z] to array.
+           //cout << StudentLine[z] << endl;
+           cout << StudentLine << endl;
 
         }// end for
+    ///////////////////////////////////////////
+        //make a second for loop,
+        // iterate thru the array, and use BST
+        // BST.print(array[i])
+    ///////////////////////////////////////////
         }//end while
+      //  return StudentLine;
           StudentFile.close();
            }// end else if
-
+//return "1";
 }
-*/
 
 
 
