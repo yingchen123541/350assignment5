@@ -62,7 +62,7 @@ void StudentRecord::option1(){
       StudentFile.close();
    }// end else if
 
-}
+}// end option1 
 
 
 
