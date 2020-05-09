@@ -2,7 +2,6 @@
 #define BINARYTREE_H
 #include <iostream>
 #include <fstream>
-#include "TreeNode.h"
 #include "TreeNode.cpp"
 
 //TRY THIS BST
