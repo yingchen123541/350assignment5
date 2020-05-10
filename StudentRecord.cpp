@@ -83,12 +83,14 @@ void StudentRecord::option1(){
   {
     std::cerr << "student file doesn't exist, empty tree" << std::endl;
     //initialize empty student tree
+    BST<string> *masterStudent = new BST<string>;
   }//end if
   else if (StudentFile)
   {
     //studentTable successfully opened, add content into masterStudent tree
-    int IDArray[100];
     BST<string> *masterStudent = new BST<string>;
+    int IDArray[100];
+    //BST<string> *masterStudent = new BST<string>;
     while (getline(StudentFile, StudentLine))
     {
           //only read the first character in each line
@@ -115,25 +117,36 @@ void StudentRecord::option1(){
 
 }// end option1
 
+void StudentRecord::option3(){
+  cout << "enter a student ID to display student information" << endl;
+  cin >> inputStudentID;
+  int inputStudentID1;
+  inputStudentID1 = stoi(inputStudentID);
 
+  StudentFile.open("studentTable.txt");
+  if (StudentFile)
+  {
+    BST<string> *masterStudent = new BST<string>;
+    while (getline(StudentFile, StudentLine))
+    {
+        StudentID = StudentLine.substr(0,1);
+        StudentID1 = stoi(StudentID);
+        masterStudent->insert(StudentLine,StudentID1);
+    }//end while
+    bool findStudent;
+    findStudent = masterStudent->search(inputStudentID1);
+    if(findStudent==true){
+    cout << "studentID exist" << endl;
+    masterStudent->returnT(inputStudentID1);
+    }//end if
+    else if (findStudent==false){
+      cout << "the studentID you enter is incorrect" << endl;
+    }//end else if
 
+  }// end if
+    StudentFile.close();
+}//end option 3
 
-// //old default constructor
-// StudentRecord::StudentRecord()
-// {
-//   m_StudentLine="unknown";
-//   m_StudentID="unknown";
-//   m_StudentID1=-1;
-//   m_totalLine=0;
-// }
-// //old overload constructor
-// StudentRecord::StudentRecord(int StudentID1)
-// {
-//   m_StudentLine=StudentLine;
-//   m_StudentID=StudentID;
-//   m_StudentID1=StudentID1;
-//   m_totalLine=totalLine;
-// }
 
 
 

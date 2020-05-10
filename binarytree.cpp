@@ -88,7 +88,8 @@ T BST<T>::returnT(int k){
       curr = curr->right;
     }
   }
-  return curr->data;
+  cout << curr->data << endl;
+ return curr->data;
 }
 
 

@@ -10,6 +10,8 @@ class StudentRecord{
      std::ifstream StudentFile;
      std::string StudentLine;
      std::string StudentID;
+     std::string inputStudentID;
+     
 
 //add getters and setters
 //helper functions
@@ -26,6 +28,8 @@ class StudentRecord{
       void setAdvisor(int a);
       int getAdvisor();
       void option1();
+      void option3();
+
 ////////////
      std::string m_StudentLine;
      std::string m_StudentID;
