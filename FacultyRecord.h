@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 
+//dont use anymore 
 class FacultyRecord{
    public:
      FacultyRecord();

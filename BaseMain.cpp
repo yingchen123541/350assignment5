@@ -6,7 +6,7 @@
 
 
 #include "binarytree.cpp"
-#include "FacultyRecord.cpp"
+#include "FacultyRecord1.h"
 #include "StudentRecord.cpp"
 //#include "doublelinkedlist.cpp"
 
@@ -59,7 +59,7 @@ int main(){
    cin >> choice;
 
    StudentRecord* printstud = new StudentRecord();
-   FacultyRecord* printfacu = new FacultyRecord();
+   FacultyRecord1* printfacu = new FacultyRecord1();
 
    if (choice==1)
    {
