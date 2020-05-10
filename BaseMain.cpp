@@ -98,8 +98,6 @@ int main(){
    }//end else if
    else if (choice==6)
    {
-     //enter 7 should print out 4, Anna, sophomore, English, 3.89, 7
-     //5, Chloe, sophomore, Spanish, 3.87, 7
      cout << endl;
      cout << "OPTION 6: " << endl;
      printfacu -> option6();
@@ -107,7 +105,9 @@ int main(){
    }//end else if
    else if (choice==7)
    {
-     cout << "Add a new student" << endl;
+     cout << endl;
+     cout << "OPTION 7: " << endl;
+     printstud -> option7();
      //code
    }//end else if
    else if (choice==8)
