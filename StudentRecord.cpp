@@ -160,6 +160,7 @@ void StudentRecord::option8(){
   if (StudentFile)
   {
     BST<string> *masterStudent = new BST<string>;
+    cout << "delete student with ID " << inputStudentID1 << endl;
     while (getline(StudentFile, StudentLine))
     {
         StudentID = StudentLine.substr(0,1);
@@ -167,7 +168,7 @@ void StudentRecord::option8(){
         masterStudent->insert(StudentLine,StudentID1);
         if(StudentID1!=inputStudentID1){
           OutputFile << StudentLine <<  endl;
-          cout << "delete student with ID " << inputStudentID1 << endl;
+
         }//end if
         else if (StudentID1!=inputStudentID1)
         {
@@ -190,7 +191,71 @@ void StudentRecord::option8(){
       }// end while
 
     }// end if
+//////////////////////////////////////////////
+//making changes to the faculty list
+//imm comment it out but sos pls
+// FacultyFile.open("facultyTable.txt");
+// OutputFile.open("fTable1.txt");
+// if (FacultyFile)
+// {
+//
+//   cout << "deleting student with ID from faculty list " << endl;
+//   while (getline(FacultyFile, FacultyLine))
+//   {
+//
+//       // ////
+//       if(addLine==Line){
+//         if(addLine==Line){
+//           for (int i=2; i<=FacultyLine.length(); ++i){
+//           string O6Character = FacultyLine.substr(i,1);
+//
+//           if (O6Character == inputStudentID1){
+//           numberid=O6Character;
+//           numberid1=stoi(numberid);
+//          cout << "numberid1 " << numberid1 << endl;
+//         for (int i=2; i<=FacultyLine.length(); ++i){
+//         }
+//         ///
+//       masterStudent->insert(StudentLine,StudentID1);
+//       if(StudentID1!=inputStudentID1){
+//         OutputFile << StudentLine <<  endl;
+//
+//       }//end if
+//       else if (StudentID1!=inputStudentID1)
+//       {
+//         cout << "delete student" << endl;
+//       }//end else if
+//
+//   }//end while
+//
+// }// end if
+// //should cahnge to faculty file
+// StudentFile.close();
+// OutputFile.close();
+//
+// StudentFile.open("studentTable1.txt");
+// OutputFile.open("studentTable.txt");
+//
+// if (StudentFile)
+// {
+//   while (getline(StudentFile, StudentLine)){
+//       OutputFile << StudentLine <<  endl;
+//   }// end while
+//
+// }// end if
+// /////////////////////////////////////////
+//
 
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////
 
 }//end option 8
 

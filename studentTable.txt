@@ -4,5 +4,4 @@
 8, Sophie, senior, music, 3.12, 9
 9, Rose, senior, music, 3.33, 9
 2, David, freshman, graphic design, 3.56, 5
-3, Peter, freshman, computer science, 3.65, 5
 4, Anna, sophomore, English, 3.89, 7
