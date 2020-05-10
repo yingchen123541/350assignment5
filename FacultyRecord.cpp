@@ -1,6 +1,12 @@
+///same as student
+// add advisees
+//remove a
+//print advisees
+//these three methods, u must use a list. we make a list.
 
 #include "FacultyRecord.h"
  #include <algorithm>
+
 
 //default constructor
 FacultyRecord::FacultyRecord()
