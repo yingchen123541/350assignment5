@@ -15,11 +15,18 @@ using namespace std;
 
 int main(){
 
+  ifstream StudentFile;
+  string StudentLine;
+  string StudentID;
+  int StudentID1;
+  string inputStudentID;
+
 
   ifstream FacultyFile;
   string FacultyLine;
   string FacultyID;
   int FacultyID1;
+  string inputFacultyID;
 
 
 //output menu information
@@ -32,7 +39,6 @@ int main(){
      break;
    }
    cout << "Here's the menu: " << endl;
-   //try 1 + 2 with arrays to sort (extra lol)
    cout << "1. Print all students and their information (sorted by ascending id #)" << endl;
    cout << "2. Print all faculty and their information (sorted by ascending id #)" << endl;
    cout << "3. Find and display student information given the students id" << endl;
@@ -52,30 +58,33 @@ int main(){
    int choice;
    cin >> choice;
 
+   StudentRecord* printstud = new StudentRecord();
+   FacultyRecord* printfacu = new FacultyRecord();
+
    if (choice==1)
    {
-     StudentRecord* printstud = new StudentRecord();
      cout << endl;
      cout << "OPTION 1: " << endl;
-      printstud -> option1();
-      BST<StudentRecord> *masterStudent = new BST<StudentRecord>;
-    //  masterStudent->insert(StudentLine,StudentID1);
+     printstud -> option1();
     }//end if
    else if (choice==2)
    {
      cout << endl;
      cout << "OPTION 2: " << endl;
-     FacultyRecord* printfacu = new FacultyRecord();
      printfacu -> option2();
  }//end else if
    else if (choice==3)
    {
-     cout << "Find and display student information given the students id" << endl;
-     //code
+     cout << endl;
+     cout << "OPTION 3: " << endl;
+     printstud -> option3();
+
    }//end else if
    else if (choice==4)
    {
-     cout << "Find and display faculty information given the faculty id" << endl;
+     cout << endl;
+     cout << "OPTION 4: " << endl;
+     printfacu -> option4();
      //code
    }//end else if
    else if (choice==5)
