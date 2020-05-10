@@ -43,7 +43,7 @@ void StudentRecord::option1(){
         StudentID1 = stoi(StudentID);
         masterStudent->insert(StudentLine,StudentID1);
         //cout << StudentLine[z] << endl;
-        std::cout << StudentLine << std::endl;
+      //  std::cout << StudentLine << std::endl;
         IDArray[totalLine]=StudentID1;
 
        totalLine=totalLine+1;
@@ -51,18 +51,16 @@ void StudentRecord::option1(){
     sort(IDArray, IDArray + totalLine);
     for (int a=0; a!=totalLine; ++a)
     {
-      cout << IDArray[a] << endl;
+    //  cout << IDArray[a] << endl;
 
-
-      /////////not sure what to put inside printTree method /////////
-      masterStudent->printTree(IDArray[a]);
     }// end for
+    masterStudent->printRoot();
 
 
       StudentFile.close();
    }// end else if
 
-}// end option1 
+}// end option1
 
 
 

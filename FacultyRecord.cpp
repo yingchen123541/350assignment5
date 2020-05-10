@@ -44,7 +44,7 @@ else if (FacultyFile)
          FacultyID = FacultyLine.substr(0,1);
          FacultyID1 = stoi(FacultyID);
          masterFaculty->insert(FacultyLine,FacultyID1);
-        std::cout << FacultyLine << std::endl;
+        //std::cout << FacultyLine << std::endl;
 
         totalLine=totalLine+1;
   }// end while
@@ -52,12 +52,9 @@ else if (FacultyFile)
   sort(IDArray, IDArray + totalLine);
   for (int a=0; a!=totalLine; ++a)
   {
-    cout << IDArray[a] << endl;
-
-
-    /////////not sure what to put inside printTree method /////////
-    masterFaculty->printTree(IDArray[a]);
+  //  cout << IDArray[a] << endl;
   }// end for
+    masterFaculty->printRoot();
 
 FacultyFile.close();
 }//end else if
