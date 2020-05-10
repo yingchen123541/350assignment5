@@ -20,12 +20,13 @@ int main(){
   string StudentID;
   int StudentID1;
   string inputStudentID;
-  
+
 
   ifstream FacultyFile;
   string FacultyLine;
   string FacultyID;
   int FacultyID1;
+  string inputFacultyID;
 
 
 //output menu information
@@ -81,7 +82,9 @@ int main(){
    }//end else if
    else if (choice==4)
    {
-     cout << "Find and display faculty information given the faculty id" << endl;
+     cout << endl;
+     cout << "OPTION 4: " << endl;
+     printfacu -> option4();
      //code
    }//end else if
    else if (choice==5)

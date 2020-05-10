@@ -12,6 +12,8 @@ class FacultyRecord{
      std::string FacultyID;
      int FacultyID1;
      int totalLine;
+     std:: string inputFacultyID;
+     int inputFacultyID1;
 //add getters and setters
      std::string m_FacultyLine;
      std::string m_FacultyID;
@@ -21,6 +23,7 @@ class FacultyRecord{
 
 
      void option2();
+     void option4();
 
 
 

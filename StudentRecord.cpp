@@ -133,13 +133,13 @@ void StudentRecord::option3(){
         StudentID1 = stoi(StudentID);
         masterStudent->insert(StudentLine,StudentID1);
     }//end while
-    bool find;
-    find = masterStudent->search(inputStudentID1);
-    if(find==true){
+    bool findStudent;
+    findStudent = masterStudent->search(inputStudentID1);
+    if(findStudent==true){
     cout << "studentID exist" << endl;
     masterStudent->returnT(inputStudentID1);
     }//end if
-    else if (find==false){
+    else if (findStudent==false){
       cout << "the studentID you enter is incorrect" << endl;
     }//end else if
 

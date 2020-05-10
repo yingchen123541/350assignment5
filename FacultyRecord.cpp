@@ -42,7 +42,7 @@ void FacultyRecord::option2(){
 else if (FacultyFile)
 {
   //facultyTable successfully opened, add content into masterFaculty tree
-  int IDArray[100];\
+  int IDArray[100];
   BST<string> *masterFaculty = new BST<string>;
   while (getline(FacultyFile, FacultyLine))
   {
@@ -66,3 +66,33 @@ FacultyFile.close();
 }//end else if
 
 }//end option2
+
+
+void FacultyRecord::option4(){
+  cout << "enter a faculty ID to output the faculty information" << endl;
+  cin >> inputFacultyID;
+  inputFacultyID1 = stoi(inputFacultyID);
+
+  FacultyFile.open("facultyTable.txt");
+  if (FacultyFile)
+  {
+    BST<string> *masterFaculty = new BST<string>;
+    while (getline(FacultyFile, FacultyLine))
+    {
+        //only read the first character in each line
+           FacultyID = FacultyLine.substr(0,1);
+           FacultyID1 = stoi(FacultyID);
+           masterFaculty->insert(FacultyLine,FacultyID1);
+    }// end while
+    bool findFaculty;
+    findFaculty = masterFaculty->search(inputFacultyID1);
+    if(findFaculty==true){
+    cout << "facultyID exist" << endl;
+    masterFaculty->returnT(inputFacultyID1);
+    }//end if
+    else if (findFaculty==false){
+      cout << "the facultyID you enter is incorrect" << endl;
+    }//end else if
+  }// end if
+  FacultyFile.close();
+}// end option 4
