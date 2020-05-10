@@ -24,6 +24,13 @@ int main(){
 
 //output menu information
    for (int i=0; i<1000; i++){
+   string userinput;
+   cout << endl;
+   cout << "Do you want to see the menu? press '0' for no, '1' for yes" << endl;
+   cin >> userinput;
+   if(userinput == "0"){
+     break;
+   }
    cout << "Here's the menu: " << endl;
    //try 1 + 2 with arrays to sort (extra lol)
    cout << "1. Print all students and their information (sorted by ascending id #)" << endl;
@@ -48,12 +55,16 @@ int main(){
    if (choice==1)
    {
      StudentRecord* printstud = new StudentRecord();
+     cout << endl;
+     cout << "OPTION 1: " << endl;
       printstud -> option1();
       BST<StudentRecord> *masterStudent = new BST<StudentRecord>;
     //  masterStudent->insert(StudentLine,StudentID1);
     }//end if
    else if (choice==2)
    {
+     cout << endl;
+     cout << "OPTION 2: " << endl;
      FacultyRecord* printfacu = new FacultyRecord();
      printfacu -> option2();
  }//end else if
