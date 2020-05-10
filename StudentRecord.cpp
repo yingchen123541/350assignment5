@@ -191,8 +191,65 @@ void StudentRecord::option8(){
 
     }// end if
 
+    OutputFile.close();
+    StudentFile.close();
+
 
 }//end option 8
+
+
+  void StudentRecord::option7(){
+    ofstream OutputFile1;
+    OutputFile1.open("studentTable.txt", ios::app);
+  //add a new student into tree and write to the file
+  string studentid;
+  string studentName;
+  string studentLevel;
+  string Major;
+  string studentGPA;
+  string studentAdv;
+  //string comma=",";
+  cout << "enter student ID" << endl;
+  cin >> studentid;
+  cout << "enter student name" << endl;
+  cin >> studentName;
+  cout << "enter student level" << endl;
+  cin >> studentLevel;
+  cout << "enter student major" << endl;
+  cin >> Major;
+  cout << "enter student gpa" << endl;
+  cin >> studentGPA;
+  cout << "enter student advisor ID" << endl;
+  cin >> studentAdv;
+
+   OutputFile1 << studentid << " ";
+   //OutputFile1 << comma;
+   OutputFile1 << studentName << " ";
+   //OutputFile1 << comma;
+   OutputFile1 << studentLevel << " ";
+  // OutputFile1 << comma;
+   OutputFile1 << Major << " ";
+  // OutputFile1 << comma;
+   OutputFile1 << studentGPA << " ";
+  // OutputFile1 << comma;
+   OutputFile1 << studentAdv << " " << "\n";
+
+   OutputFile1.close();
+
+   StudentFile.open("studentTable.txt");
+   if (StudentFile)
+   {
+     //add new students into tree
+     BST<string> *masterStudent = new BST<string>;
+     while (getline(StudentFile, StudentLine))
+     {
+       StudentID = StudentLine.substr(0,1);
+       StudentID1 = stoi(StudentID);
+       masterStudent->insert(StudentLine,StudentID1);
+     }// end while
+   }// end if
+
+}//end option 7
 
 
 

@@ -29,6 +29,7 @@ class StudentRecord{
       int getAdvisor();
       void option1();
       void option3();
+      void option7();
       void option8();
 
 ////////////
