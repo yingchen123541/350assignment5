@@ -85,12 +85,13 @@ int main(){
      cout << endl;
      cout << "OPTION 4: " << endl;
      printfacu -> option4();
-     //code
    }//end else if
    else if (choice==5)
    {
-     cout << "Given a student’s id, print the name and info of their faculty advisor" << endl;
-     //code
+     //like given 5, print out 7, Bob, assistant prof, English, [4,5]
+     cout << endl;
+     cout << "OPTION 5: " << endl;
+     printfacu -> option5();
    }//end else if
    else if (choice==6)
    {
