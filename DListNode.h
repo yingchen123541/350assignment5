@@ -10,7 +10,7 @@ public:
 	~DListNode();
 //overloaded constructor
 	DListNode(T data);
-	
+
 	T data;
 	DListNode<T> *next;
 	DListNode<T> *prev;

@@ -1,4 +1,4 @@
-///same as student
+//same as student
 // add advisees
 //remove a
 //print advisees
