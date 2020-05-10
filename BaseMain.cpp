@@ -96,6 +96,7 @@ int main(){
    else if (choice==6)
    {
      cout << "Given a faculty id, print ALL the names and info of his/her advisees." << endl;
+     printfacu -> option6();
      //code
    }//end else if
    else if (choice==7)

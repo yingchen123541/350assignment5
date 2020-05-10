@@ -48,6 +48,7 @@ public:
   void option2();
   void option4();
   void option5();
+  void option6();
 
 
 };
@@ -246,5 +247,65 @@ void FacultyRecord1::option5(){
 
   }//end if
 
-
 }//end option 5
+
+void FacultyRecord1::option6(){
+string listbracket = "[";
+string endbracket = "]";
+string numberid;
+int numberid1;
+string adviseeID;
+
+GenLinkedList<int> *advlist = new GenLinkedList<int>;
+cout << "enter a faculty ID to print their advisees " << endl;
+cin >> adviseeID;
+cout << endl;
+FacultyFile.open("facultyTable.txt");
+
+  while(getline(FacultyFile, FacultyLine)){
+  //  for(int i = 0; i < FacultyLine.length(); i++){
+//  cout << "hello2" << endl;
+      FacultyID = FacultyLine.substr(0,1);
+      if(FacultyID == adviseeID){
+      for(int i = 0; i < FacultyLine.length(); i++){
+        FacultyID = FacultyLine.substr(i,1);
+        if(FacultyID == listbracket){
+          cout << FacultyID << endl;
+
+      // //  while(FacultyID != endbracket){
+      //       if(FacultyID != ","){
+      //         FacultyID = numberid;
+      //         cout << numberid << endl;
+      //     //    numberid1 = stoi(numberid);
+      //       //  advlist -> insertBack(numberid1);
+      //         cout << "hello" << endl;
+      //         //cout << numberid1 << endl;
+      //       }
+        //  }
+      //  }
+      }
+      }
+        // FacultyID = FacultyLine.substr(i,1);
+        // while(FacultyID != endbracket){
+        //   if(FacultyID != ","){
+        //     FacultyID = numberid;
+        //     numberid1 = stoi(numberid);
+        //     advlist -> insertBack(numberid1);
+        //     cout << numberid1 << endl;
+        // }
+        // }
+      }
+
+  //  }
+
+  }
+
+advlist -> printList();
+FacultyFile.close();
+
+    // for(int i = 0; i < numAdvisees; i++){
+    //   getline(facIn,line);
+    //   int tempA = stoi(line);
+    //   tempFac.addAdvisee(tempA);
+  //  }
+}//op 6
