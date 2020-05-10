@@ -132,6 +132,7 @@ bool BST<T>::deleteNode(int k){
       }else{
         parent->right = NULL;
       }
+      cout << "deleted." << endl;
       delete curr;
     }
     //the node has 1 child
@@ -155,6 +156,7 @@ bool BST<T>::deleteNode(int k){
       }else{
         parent->right = curr->right;
       }
+      cout << "deleted." << endl;
       delete curr;
     }else{
       //the node has 2 children :((
@@ -169,6 +171,7 @@ bool BST<T>::deleteNode(int k){
       }
 
       successor->left = curr->left;
+      cout << "deleted." << endl;
       delete curr;
     }
   }

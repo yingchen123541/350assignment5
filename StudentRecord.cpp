@@ -148,7 +148,42 @@ void StudentRecord::option3(){
 }//end option 3
 
 
+void StudentRecord::deleteStud(){
+  cout << "enter a student ID to delete student information" << endl;
+  cin >> inputStudentID;
+  int inputStudentID1;
+  inputStudentID1 = stoi(inputStudentID);
+  inputStudentID1 = stoi(inputStudentID);
 
+  StudentFile.open("studentTable.txt");
+  if (StudentFile)
+  {
+    BST<string> *masterStudent = new BST<string>;
+    while (getline(StudentFile, StudentLine))
+    {
+        StudentID = StudentLine.substr(0,1);
+        StudentID1 = stoi(StudentID);
+        masterStudent->insert(StudentLine,StudentID1);
+    }//end while
+    bool findStudent;
+    findStudent = masterStudent->search(inputStudentID1);
+    if(findStudent==true){
+    cout << "studentID exist. Now removing from the Database...." << endl;
+    masterStudent->deleteNode(inputStudentID1);
+
+
+      //if you delete student have to delete off facult list too
+
+    }//end if
+    else if (findStudent==false){
+      cout << "the studentID you enter is incorrect" << endl;
+
+    }//end else if
+  cout << "Updated tree: " << endl;
+  //masterStudent->PrintFileR(ofstream& out)
+  }// end if
+    StudentFile.close();
+}
 
 
 

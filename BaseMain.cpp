@@ -107,6 +107,7 @@ int main(){
    else if (choice==8)
    {
      cout << "Delete a student given the id" << endl;
+     printstud -> deleteStud();
      //code
    }//end else if
    else if (choice==9)

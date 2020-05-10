@@ -11,7 +11,7 @@ class StudentRecord{
      std::string StudentLine;
      std::string StudentID;
      std::string inputStudentID;
-     
+
 
 //add getters and setters
 //helper functions
@@ -29,6 +29,7 @@ class StudentRecord{
       int getAdvisor();
       void option1();
       void option3();
+      void deleteStud();
 
 ////////////
      std::string m_StudentLine;
