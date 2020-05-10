@@ -148,14 +148,15 @@ void StudentRecord::option3(){
 }//end option 3
 
 
-void StudentRecord::deleteStud(){
+void StudentRecord::option8(){
   cout << "enter a student ID to delete student information" << endl;
   cin >> inputStudentID;
+  ofstream OutputFile;
   int inputStudentID1;
-  inputStudentID1 = stoi(inputStudentID);
   inputStudentID1 = stoi(inputStudentID);
 
   StudentFile.open("studentTable.txt");
+  OutputFile.open("studentTable1.txt");
   if (StudentFile)
   {
     BST<string> *masterStudent = new BST<string>;
@@ -164,26 +165,34 @@ void StudentRecord::deleteStud(){
         StudentID = StudentLine.substr(0,1);
         StudentID1 = stoi(StudentID);
         masterStudent->insert(StudentLine,StudentID1);
+        if(StudentID1!=inputStudentID1){
+          OutputFile << StudentLine <<  endl;
+          cout << "delete student with ID " << inputStudentID1 << endl;
+        }//end if
+        else if (StudentID1!=inputStudentID1)
+        {
+          cout << "delete student" << endl;
+        }//end else if
+
     }//end while
-    bool findStudent;
-    findStudent = masterStudent->search(inputStudentID1);
-    if(findStudent==true){
-    cout << "studentID exist. Now removing from the Database...." << endl;
-    masterStudent->deleteNode(inputStudentID1);
 
-
-      //if you delete student have to delete off facult list too
-
-    }//end if
-    else if (findStudent==false){
-      cout << "the studentID you enter is incorrect" << endl;
-
-    }//end else if
-  cout << "Updated tree: " << endl;
-  //masterStudent->PrintFileR(ofstream& out)
   }// end if
     StudentFile.close();
-}
+    OutputFile.close();
+
+    StudentFile.open("studentTable1.txt");
+    OutputFile.open("studentTable.txt");
+
+    if (StudentFile)
+    {
+      while (getline(StudentFile, StudentLine)){
+          OutputFile << StudentLine <<  endl;
+      }// end while
+
+    }// end if
+
+
+}//end option 8
 
 
 

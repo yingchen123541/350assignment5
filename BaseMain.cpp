@@ -110,8 +110,9 @@ int main(){
    }//end else if
    else if (choice==8)
    {
-     cout << "Delete a student given the id" << endl;
-     printstud -> deleteStud();
+     cout << endl;
+     cout << "OPTION 8: " << endl;
+     printstud -> option8();
      //code
    }//end else if
    else if (choice==9)
