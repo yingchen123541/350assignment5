@@ -29,7 +29,7 @@ class StudentRecord{
       int getAdvisor();
       void option1();
       void option3();
-      void deleteStud();
+      void option8();
 
 ////////////
      std::string m_StudentLine;
