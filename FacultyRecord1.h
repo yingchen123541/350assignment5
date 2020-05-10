@@ -1,5 +1,6 @@
 #include <iostream>
 #include "GenLinkedList.h"
+#include "StudentRecord.cpp"
 
 using namespace std;
 
@@ -23,6 +24,11 @@ public:
   std:: string O5studentID;
   std::string m_FacultyLine;
   std::string m_FacultyID;
+
+  std::ifstream StudentFile;
+  std::string StudentLine;
+  std::string StudentID;
+  int StudentID1;
 
   //constructors
   FacultyRecord1();
@@ -255,6 +261,8 @@ string endbracket = "]";
 string numberid;
 int numberid1;
 string adviseeID;
+int Line=0;
+int addLine=0;
 
 GenLinkedList<int> *advlist = new GenLinkedList<int>;
 cout << "enter a faculty ID to print their advisees " << endl;
@@ -262,50 +270,56 @@ cin >> adviseeID;
 cout << endl;
 FacultyFile.open("facultyTable.txt");
 
+if (FacultyFile)
+{
   while(getline(FacultyFile, FacultyLine)){
-  //  for(int i = 0; i < FacultyLine.length(); i++){
-//  cout << "hello2" << endl;
-      FacultyID = FacultyLine.substr(0,1);
-      if(FacultyID == adviseeID){
-      for(int i = 0; i < FacultyLine.length(); i++){
-        FacultyID = FacultyLine.substr(i,1);
-        if(FacultyID == listbracket){
-          cout << FacultyID << endl;
-
-      // //  while(FacultyID != endbracket){
-      //       if(FacultyID != ","){
-      //         FacultyID = numberid;
-      //         cout << numberid << endl;
-      //     //    numberid1 = stoi(numberid);
-      //       //  advlist -> insertBack(numberid1);
-      //         cout << "hello" << endl;
-      //         //cout << numberid1 << endl;
-      //       }
-        //  }
-      //  }
-      }
-      }
-        // FacultyID = FacultyLine.substr(i,1);
-        // while(FacultyID != endbracket){
-        //   if(FacultyID != ","){
-        //     FacultyID = numberid;
-        //     numberid1 = stoi(numberid);
-        //     advlist -> insertBack(numberid1);
-        //     cout << numberid1 << endl;
-        // }
-        // }
-      }
-
-  //  }
-
-  }
-
-advlist -> printList();
+    Line=Line+1;
+     FacultyID = FacultyLine.substr(0,1);
+    // cout << FacultyID << endl;
+     if(FacultyID==adviseeID)
+     {
+    //   cout << "at line " << Line << "find the faculty" << endl;
+     }//end if
+  }//end while
+}//end if
 FacultyFile.close();
+//open the file again to read till reach Line with certain faculty
+FacultyFile.open("facultyTable.txt");
+if (FacultyFile)
+{
+  while(getline(FacultyFile, FacultyLine)){
+   addLine=addLine+1;
+   if(addLine==Line){
+     for (int i=2; i<=FacultyLine.length(); ++i){
+     string O6Character = FacultyLine.substr(i,1);
+     //cout << O6Character << endl;
+     if (O6Character=="0" || O6Character=="1" || O6Character=="2" || O6Character=="3" || O6Character=="4" || O6Character=="5" || O6Character=="6" || O6Character=="7" || O6Character=="8" || O6Character=="9"){
+     numberid=O6Character;
+     numberid1=stoi(numberid);
+    cout << "numberid1 " << numberid1 << endl;
 
-    // for(int i = 0; i < numAdvisees; i++){
-    //   getline(facIn,line);
-    //   int tempA = stoi(line);
-    //   tempFac.addAdvisee(tempA);
-  //  }
-}//op 6
+    //open and read from student class and insert into tree
+     StudentFile.open("studentTable.txt");
+     if (StudentFile)
+     {
+       BST<string> *masterStudent = new BST<string>;
+       while (getline(StudentFile, StudentLine))
+       {
+           StudentID = StudentLine.substr(0,1);
+           StudentID1 = stoi(StudentID);
+           masterStudent->insert(StudentLine,StudentID1);
+       }//end while
+       masterStudent->returnT(numberid1);
+     }//end if student file
+
+     StudentFile.close();
+
+   }//end if
+
+   }// end for
+
+   }//end if
+  }//end while
+}// end if
+
+}//option 6

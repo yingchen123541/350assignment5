@@ -7,7 +7,7 @@
 
 #include "binarytree.cpp"
 #include "FacultyRecord1.h"
-#include "StudentRecord.cpp"
+//#include "StudentRecord.cpp"
 //#include "doublelinkedlist.cpp"
 
 
@@ -20,6 +20,7 @@ int main(){
   string StudentID;
   int StudentID1;
   string inputStudentID;
+
 
 
   ifstream FacultyFile;
@@ -95,9 +96,12 @@ int main(){
    }//end else if
    else if (choice==6)
    {
-     cout << "Given a faculty id, print ALL the names and info of his/her advisees." << endl;
+     //enter 7 should print out 4, Anna, sophomore, English, 3.89, 7
+     //5, Chloe, sophomore, Spanish, 3.87, 7
+     cout << endl;
+     cout << "OPTION 6: " << endl;
      printfacu -> option6();
-     //code
+
    }//end else if
    else if (choice==7)
    {
