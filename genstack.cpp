@@ -1,4 +1,4 @@
-#include "genstack1.h"
+#include "genstack.h"
 //inclduing header class
 
 //constructors
@@ -13,6 +13,7 @@ template <typename T>
 genstack<T>::genstack(int max){
   cap= max;
   first = -1;
+  t = '1';
   myArray = new T[cap];
 }
 //deconstructor will delete
@@ -22,22 +23,22 @@ genstack<T>::~genstack(){
 }
 // push onto the stack
 template <typename T>
-void genstack<T>::push(const T& t){
+void genstack<T>::push(char t){
   //first checking if the stack is empty
-  if (!this->isFull()){
-    this->myArray[++first] = t;
-  }else{
-    //increase the size of the stack
-    cap *= 2;
-    T* newArray = new T[cap];
-    for (int i = 0; i < this->currentsize(); ++i){
-      newArray[i] = myArray[i];
-    }
-    myArray = newArray;
-    this->myArray[++first] = t;
-    newArray = NULL;
-    delete [] newArray;
-  }
+  //if (!this->isFull()){
+    myArray[++first] = t;
+  // }else{
+  //   //increase the size of the stack
+  //   cap *= 2;
+  //   char* newArray = new char[cap];
+  //   for (int i = 0; i < this->currentsize(); ++i){
+  //     newArray[i] = myArray[i];
+  //   }
+  //   myArray = newArray;
+  //   this->myArray[++first] = t;
+  //   newArray = NULL;
+  //   delete [] newArray;
+//  }
 }
 //popping values off the stack
 template <typename T>
@@ -67,7 +68,7 @@ bool genstack<T>::isFull() const
 }
 // to check the top value of the stack
 template <typename T>
-const T& genstack<T>::top() const throw(StackEx){
+char genstack<T>::top() const throw(StackEx){
   if (!this->isEmpty()){
     return this->myArray[first];
   }else{

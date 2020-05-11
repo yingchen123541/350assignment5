@@ -55,7 +55,7 @@ Rollback::Rollback(int d){
 }
 
 Rollback::Rollback(FacultyRecord1 d){
-  isFacAddt = false;
+  isFacAdd = false;
   isFacDelete = false;
   isStudDelete = false;
   isStudAdd = false;

@@ -281,7 +281,7 @@ BST<string> *masterStudent = new BST<string>;
   string studentGPA;
   string studentAdv;
   //string comma=",";
-  cout << "enter student ID" << endl;
+  cout << "confirm student ID" << endl;
   cin >> studentid;
   cout << "enter student name" << endl;
   cin >> studentName;
