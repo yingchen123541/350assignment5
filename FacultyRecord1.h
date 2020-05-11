@@ -56,6 +56,7 @@ public:
   void option5();
   void option6();
   void option9();
+  void option10();
 
 
 };
@@ -370,3 +371,48 @@ void FacultyRecord1::option9(){
 
 
 }//end option 9
+
+void FacultyRecord1::option10(){
+  cout << "enter a faculty ID to delete student information" << endl;
+  cin >> inputFacultyID;
+  ofstream OutputFile;
+  int inputFACID1;
+  inputFACID1 = stoi(inputFacultyID);
+
+  FacultyFile.open("facultyTable.txt");
+  OutputFile.open("facultyTable1.txt");
+  if (FacultyFile)
+  {
+    BST<string> *masterFaculty = new BST<string>;
+    cout << "delete faculty with ID " << inputFACID1 << endl;
+    while (getline(FacultyFile, FacultyLine))
+    {
+        FacultyID = FacultyLine.substr(0,1);
+        FacultyID1 = stoi(FacultyID);
+        masterFaculty->insert(FacultyLine,FacultyID1);
+        if(FacultyID1!=inputFACID1){
+          OutputFile << FacultyLine <<  endl;
+
+        }//end if
+        else if (FacultyID1!= inputFACID1)
+        {
+          cout << "delete faculty" << endl;
+        }//end else if
+
+    }//end while
+
+  }// end if
+    FacultyFile.close();
+    OutputFile.close();
+
+    FacultyFile.open("facultyTable1.txt");
+    OutputFile.open("facultyTable.txt");
+
+    if (FacultyFile)
+    {
+      while (getline(FacultyFile, FacultyLine)){
+          OutputFile << FacultyLine <<  endl;
+      }// end while
+
+    }// end if
+}
