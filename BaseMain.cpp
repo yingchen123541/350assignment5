@@ -138,7 +138,9 @@ int main(){
    }//end else if
    else if (choice==11)
    {
-     cout << "Change a student’s advisor given the student id and the new faculty id." << endl;
+     cout << endl;
+     cout << "OPTION 11: " << endl;
+     printstud -> option11();
      //code
    }//end else if
    else if(choice==12)

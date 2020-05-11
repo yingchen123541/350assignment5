@@ -31,6 +31,7 @@ class StudentRecord{
       void option3();
       void option7();
       void option8();
+      void option11();
 
 ////////////
      std::string m_StudentLine;
