@@ -122,12 +122,12 @@ int main(){
    {
      cout << endl;
     cout << "OPTION 7: pushing onto the stack.." << endl;
-    cout << rbstack.currentsize() << endl;
+    //cout << rbstack.currentsize() << endl;
 
    rbstack.push(addS);
     cout << "stack size:" << rbstack.currentsize() << endl;
     printstud -> option7();
-    printstud -> option7();
+  //  printstud -> option7();
 
 
    }//end else if
@@ -145,7 +145,7 @@ int main(){
    else if (choice==9)
    {
      cout << endl;
-    rbstack.push(2);
+    rbstack.push(addF);
      cout << "stack size:" << rbstack.currentsize() << endl;
      cout << "OPTION 9: " << endl;
      printfacu -> option9();
@@ -185,11 +185,45 @@ int main(){
       cout << "Do you wish to delete the recently added student? (0- no, 1-yes)" << endl;
       cin >> inp;
       if(inp == 1){
-         cout << "removing students from database... to confirm enter the students info." << endl;
-         printstud -> option8();
+        cout << "popping previous action from stack." << endl;
+        rbstack.pop();
+        cout << "stack size is now: " << rbstack.currentsize() << endl;
+        cout << "removing students from database... to confirm ";
+        printstud -> option8();
        }
-       rbstack.pop();
-     }
+     }else if (rbstack.top() == '1'){
+           int inp;
+           cout << "Do you wish to add the recently deleted student? (0- no, 1-yes)" << endl;
+           cin >> inp;
+           if(inp == 1){
+             rbstack.pop();
+             cout << "stack size is now: " << rbstack.currentsize() << endl;
+             cout << "adding student back to database... to confirm ";
+             printstud -> option7();
+            }
+          }else if (rbstack.top() == '2'){
+                int inp;
+                cout << "Do you wish to delete the recently added faculty? (0- no, 1-yes)" << endl;
+                cin >> inp;
+                if(inp == 1){
+                  rbstack.pop();
+                  cout << "stack size is now: " << rbstack.currentsize() << endl;
+                  cout << "deleting faculty from database... to confirm ";
+                  printfacu -> option10();
+                 }
+           }else if (rbstack.top() == '3'){
+                 int inp;
+                 cout << "Do you wish to add the recently deleted faculty? (0- no, 1-yes)" << endl;
+                 cin >> inp;
+                 if(inp == 1){
+                   rbstack.pop();
+                   cout << "stack size is now: " << rbstack.currentsize() << endl;
+                   cout << "adding faculty from database... to confirm ";
+                   printfacu -> option9();
+                  }
+            }else if (rbstack.isEmpty()){
+              cout << "there are no actions to undo.." << endl;
+            }
 
      //code
    }//end else if
