@@ -5,3 +5,4 @@
 9, Rose, senior, music, 3.33, 9
 2, David, freshman, graphic design, 3.56, 5
 4, Anna, sophomore, English, 3.89, 7
+32700, , , , , 32700, , , , , 32700, , , , , 

@@ -121,7 +121,7 @@ int main(){
    {
      cout << endl;
      cout << "OPTION 9: " << endl;
-     //printfacu -> option9();
+     printfacu -> option9();
      //code
    }//end else if
    else if (choice==10)

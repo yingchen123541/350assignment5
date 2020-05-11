@@ -55,6 +55,7 @@ public:
   void option4();
   void option5();
   void option6();
+  void option9();
 
 
 };
@@ -323,3 +324,49 @@ if (FacultyFile)
 }// end if
 
 }//option 6
+
+
+void FacultyRecord1::option9(){
+  ofstream OutputFile2;
+  OutputFile2.open("FacultyTable.txt", ios::app);
+
+  string facultyid;
+  string facultyName;
+  string facultyLevel;
+  string department;
+  string advisee;
+  //string comma=",";
+  cout << "enter faculty ID" << endl;
+  cin >> facultyid;
+  cout << "enter faculty name" << endl;
+  cin >> facultyName;
+  cout << "enter faculty level" << endl;
+  cin >> facultyLevel;
+  cout << "enter faculty department" << endl;
+  cin >> department;
+  cout << "enter advisees, in the form of [1,2]" << endl;
+  cin >> advisee;
+
+  OutputFile2 << facultyid << " ";
+  OutputFile2 << facultyName << " ";
+  OutputFile2 << facultyLevel << " ";
+  OutputFile2 << department << " ";
+  OutputFile2 << advisee << " " << "\n";
+
+  OutputFile2.close();
+
+  FacultyFile.open("facultyTable.txt");
+  if (FacultyFile)
+  {
+    //add new students into tree
+    BST<string> *masterFaculty = new BST<string>;
+    while (getline(FacultyFile, FacultyLine))
+    {
+      FacultyID = FacultyLine.substr(0,1);
+      FacultyID1 = stoi(FacultyID);
+      masterFaculty->insert(FacultyLine,FacultyID1);
+    }// end while
+  }// end if
+
+
+}//end option 9
