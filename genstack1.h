@@ -4,6 +4,7 @@
 #ifndef GENSTACK1_H
 #define GENSTACK1_H
 #include <iostream>
+#include "StackEx.h"
 
 using namespace std;
 //template classes, also known as general classes, easier to reuse code and not have to

@@ -5,6 +5,7 @@
 #include "FacultyRecord1.h"
 //#include "Rollback.h"
 #include "genstack.cpp"
+#include "StackEx.h"
 
 //#include "StudentRecord.cpp"
 //#include "doublelinkedlist.cpp"

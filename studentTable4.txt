@@ -1,1 +1,8 @@
 
+5, Chloe, sophomore, Spanish, 3.87, 7
+6, Hannah, junior, Psychology, 3.76, 8
+7, Wyatt, junior, Psychology, 2.56, 8
+8, Sophie, senior, music, 3.12, 9
+9, Rose, senior, music, 3.33, 9
+2, David, freshman, graphic design, 3.56, 5
+4, Anna, sophomore, English, 3.89, 6
