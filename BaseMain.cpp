@@ -26,6 +26,8 @@ int main(){
   char delS = '1';
   char addF = '2';
   char delF = '3';
+  // 0 = Add student , 1 = delete student
+  // 2 = add faculty, 3 = delete faculty
 
 
   ifstream FacultyFile;
@@ -76,8 +78,7 @@ int main(){
    StudentRecord* printstud = new StudentRecord();
    FacultyRecord1* printfacu = new FacultyRecord1();
 
-   // 0 = Add student , 1 = delete student
-   // 2 = add faculty, 3 = delete faculty
+
 
 
    if (choice==1)
@@ -127,8 +128,8 @@ int main(){
 
     rbstack.push(addS);
     cout << "stack size:" << rbstack.currentsize() << endl;
-     printstud -> option7();
-     
+    printstud -> option7();
+
    }//end else if
    else if (choice==8)
    {
