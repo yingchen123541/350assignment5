@@ -3,6 +3,9 @@
 // tree name: masterFaculty, masterStudent
 #include "binarytree.cpp"
 #include "FacultyRecord1.h"
+#include "Rollback.h"
+#include "genstack.cpp"
+
 //#include "StudentRecord.cpp"
 //#include "doublelinkedlist.cpp"
 
@@ -48,6 +51,7 @@ int main(){
    cout << "8. Delete a student given the id" << endl;
     //make changes to original fac txt
    cout << "9. Add a new faculty member" << endl;
+   //we have to make additional changes to the original file
    cout << "10. Delete a faculty member given the id." << endl;
    //make changes to original student txt
    cout << "11. Change a student’s advisor given the student id and the new faculty id." << endl;
@@ -127,6 +131,9 @@ int main(){
    else if (choice==10)
    {
      cout << "Delete a faculty member given the id." << endl;
+     cout << endl;
+     cout << "OPTION 10: " << endl;
+     printfacu -> option10();
      //code
    }//end else if
    else if (choice==11)
