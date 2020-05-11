@@ -57,6 +57,7 @@ public:
   void option6();
   void option9();
   void option10();
+  void option12();
 
 
 };
@@ -416,3 +417,49 @@ void FacultyRecord1::option10(){
 
     }// end if
 }
+
+//ask lucas
+void FacultyRecord1::option12(){
+  //Remove an advisee from a faculty member given the ids
+  string Fid;
+  ofstream OutputFile5;
+  OutputFile5.open("facultyTable5.txt", ios::app);
+  string Sid;
+  int tline=0;
+  int find=0;
+   cout << "enter a faculty ID" << endl;
+   cin >> Fid;
+   cout << "enter a student ID" << endl;
+   cin >> Sid;
+
+   FacultyFile.open("facultyTable.txt");
+   if (FacultyFile)
+   {
+     while (getline(FacultyFile, FacultyLine))
+     {
+       tline=tline+1;
+         FacultyID = FacultyLine.substr(0,1);
+         FacultyID1 = stoi(FacultyID);
+         if(FacultyID==Fid)
+         {
+           cout << "find the faculty at line " << tline << endl;
+           find=tline;
+           cout << FacultyLine;
+           for (int i=0; i<=FacultyLine.length(); ++i){
+             string a  = FacultyLine.substr(i,1);
+             if(a!=Sid)
+             OutputFile5 << a;
+           }//end for
+         }//end if
+         if(find!=tline){
+         cout << FacultyLine << endl;
+         OutputFile5 << FacultyLine << endl;
+       }
+
+       }//end while
+
+     }//end if
+
+
+
+}//end option12

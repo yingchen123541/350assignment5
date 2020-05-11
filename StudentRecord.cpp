@@ -192,60 +192,61 @@ void StudentRecord::option8(){
 
     }// end if
 
-//////////////////////////////////////////////
 //making changes to the faculty list
 //imm comment it out but sos pls
-// FacultyFile.open("facultyTable.txt");
-// OutputFile.open("fTable1.txt");
-// if (FacultyFile)
-// {
-//
-//   cout << "deleting student with ID from faculty list " << endl;
-//   while (getline(FacultyFile, FacultyLine))
-//   {
-//
-//       // ////
-//       if(addLine==Line){
-//         if(addLine==Line){
-//           for (int i=2; i<=FacultyLine.length(); ++i){
-//           string O6Character = FacultyLine.substr(i,1);
-//
-//           if (O6Character == inputStudentID1){
-//           numberid=O6Character;
-//           numberid1=stoi(numberid);
-//          cout << "numberid1 " << numberid1 << endl;
-//         for (int i=2; i<=FacultyLine.length(); ++i){
-//         }
-//         ///
-//       masterStudent->insert(StudentLine,StudentID1);
-//       if(StudentID1!=inputStudentID1){
-//         OutputFile << StudentLine <<  endl;
-//
-//       }//end if
-//       else if (StudentID1!=inputStudentID1)
-//       {
-//         cout << "delete student" << endl;
-//       }//end else if
-//
-//   }//end while
-//
-// }// end if
+ifstream FacultyFile;
+ FacultyFile.open("facultyTable.txt");
+ OutputFile.open("fTable1.txt");
+ string FacultyLine;
+string O6Character;
+int O6Character1;
+int numberid1;
+BST<string> *masterStudent = new BST<string>;
+ if (FacultyFile)
+ {
+
+   cout << "deleting student with ID from faculty list " << endl;
+  while (getline(FacultyFile, FacultyLine))
+  {
+    //   if(addLine==Line){
+        // if(addLine==Line){
+
+            O6Character = FacultyLine.substr(0,1);
+            O6Character1=stoi(O6Character);
+           if (O6Character1 == inputStudentID1){
+          numberid1=O6Character1;
+
+          cout << "numberid1 " << numberid1 << endl;
+         for (int i=2; i<=FacultyLine.length(); ++i){
+         }
+
+       masterStudent->insert(StudentLine,StudentID1);
+       if(StudentID1!=inputStudentID1){
+         OutputFile << StudentLine <<  endl;
+
+       }//end if
+       else if (StudentID1!=inputStudentID1)
+       {
+         cout << "delete student" << endl;
+       }//end else if
+
+   }//end while
+
+
 // //should cahnge to faculty file
-// StudentFile.close();
-// OutputFile.close();
-//
-// StudentFile.open("studentTable1.txt");
-// OutputFile.open("studentTable.txt");
-//
-// if (StudentFile)
-// {
-//   while (getline(StudentFile, StudentLine)){
-//       OutputFile << StudentLine <<  endl;
-//   }// end while
-//
-// }// end if
-// /////////////////////////////////////////
-//
+ StudentFile.close();
+ OutputFile.close();
+
+ StudentFile.open("studentTable1.txt");
+ OutputFile.open("studentTable.txt");
+
+ if (StudentFile)
+ {
+   while (getline(StudentFile, StudentLine)){
+       OutputFile << StudentLine <<  endl;
+   }// end while
+ }// end if
+
 
 
 
@@ -264,6 +265,8 @@ void StudentRecord::option8(){
 
 
 
+}
+}
 }//end option 8
 
 
@@ -277,6 +280,8 @@ void StudentRecord::option8(){
   string Major;
   string studentGPA;
   string studentAdv;
+  string StudentID;
+  int StudentID1;
   //string comma=",";
   cout << "confirm student ID" << endl;
   cin >> studentid;
