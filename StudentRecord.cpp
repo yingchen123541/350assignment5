@@ -320,6 +320,57 @@ void StudentRecord::option8(){
 
 }//end option 7
 
+//ask lucas 
+void StudentRecord::option11(){
+  string O11StudentID;
+  string O11FacultyID;
+  int NumLine=0;
+  int findline;
+  string sCharacter;
+  //Change a student’s advisor given the student id and the new faculty id.
+  cout << "enter student ID" << endl;
+  cin >> O11StudentID;
+  cout << "enter new faculty ID" << endl;
+  cin >> O11FacultyID;
+
+  ofstream OutputFile3;
+  OutputFile3.open("studentTable4.txt", ios::app);
+
+  StudentFile.open("studentTable.txt");
+  if (StudentFile)
+  {
+    while (getline(StudentFile, StudentLine))
+    {
+
+      NumLine=NumLine+1;
+      StudentID = StudentLine.substr(0,1);
+      StudentID1 = stoi(StudentID);
+      if(StudentID!=O11StudentID){
+      OutputFile3 << StudentLine << endl;
+
+    }
+      else if(StudentID==O11StudentID)
+      {
+            cout << "find the student at line " << NumLine << endl;
+            findline= NumLine;
+            for (int i=0; i<StudentLine.length()-2; ++i){
+               sCharacter = StudentLine.substr(i,1);
+               if(StudentID==O11StudentID){
+              OutputFile3 << sCharacter;
+            }
+            }//end for
+            OutputFile3 << " " << O11FacultyID << '\n';
+
+          }//end else if
+
+
+
+
+}//end while
+}//end if
+
+}//end option11
+
 
 
 
