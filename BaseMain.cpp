@@ -146,8 +146,10 @@ int main(){
    }//end else if
    else if(choice==12)
    {
-     cout << "Remove an advisee from a faculty member given the ids" << endl;
-     //code
+     cout << endl;
+     cout << "OPTION 12: ";
+     printfacu -> option12();
+
    }//end else if
    else if (choice==13)
    {
