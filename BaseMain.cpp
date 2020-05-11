@@ -7,8 +7,6 @@
 #include "genstack.cpp"
 #include "StackEx.h"
 
-//#include "StudentRecord.cpp"
-//#include "doublelinkedlist.cpp"
 
 
 using namespace std;
@@ -21,7 +19,7 @@ int main(){
   int StudentID1;
   string inputStudentID;
 
-  genstack<char> rbstack;
+   genstack<char> rbstack;
   char addS = '0';
   char delS = '1';
   char addF = '2';
@@ -122,20 +120,20 @@ int main(){
    else if (choice==7)
    {
      cout << endl;
-     cout << "OPTION 7: pushing onto the stack.." << endl;
-    //cout << rbstack.currentsize() << endl;
+    cout << "OPTION 7: pushing onto the stack.." << endl;
+    cout << rbstack.currentsize() << endl;
 
-    rbstack.push(addS);
+   rbstack.push(addS);
     cout << "stack size:" << rbstack.currentsize() << endl;
      printstud -> option7();
-     
+
    }//end else if
    else if (choice==8)
    {
      cout << endl;
      cout << "OPTION 8: " << endl;
-     rbstack.push(delS);
-     cout << "stack size:" << rbstack.currentsize() << endl;
+    rbstack.push(delS);
+    cout << "stack size:" << rbstack.currentsize() << endl;
      printstud -> option8();
 
 
@@ -144,7 +142,7 @@ int main(){
    else if (choice==9)
    {
      cout << endl;
-     rbstack.push(2);
+    rbstack.push(2);
      cout << "stack size:" << rbstack.currentsize() << endl;
      cout << "OPTION 9: " << endl;
      printfacu -> option9();
@@ -152,13 +150,13 @@ int main(){
    }//end else if
    else if (choice==10)
    {
-     cout << "Delete a faculty member given the id." << endl;
+    cout << "Delete a faculty member given the id." << endl;
      cout << endl;
-     rbstack.push(delF);
-     cout << "stack size:" << rbstack.currentsize() << endl;
+    rbstack.push(delF);
+    cout << "stack size:" << rbstack.currentsize() << endl;
      cout << "OPTION 10: " << endl;
      printfacu -> option10();
-    // rollbackobject.setAddFac(true);
+     //rollbackobject.setAddFac(true);
     //add to stack rollback.insert
      //code
    }//end else if
@@ -179,11 +177,11 @@ int main(){
    else if (choice==13)
    {
      cout << "Rollback... " << endl;
-     if (rbstack.top() == '0'){
-       int inp;
-       cout << "Do you wish to delete the recently added student? (0- no, 1-yes)" << endl;
-       cin >> inp;
-       if(inp == 1){
+    if (rbstack.top() == '0'){
+      int inp;
+      cout << "Do you wish to delete the recently added student? (0- no, 1-yes)" << endl;
+      cin >> inp;
+      if(inp == 1){
          cout << "removing students from database... to confirm enter the students info." << endl;
          printstud -> option8();
        }

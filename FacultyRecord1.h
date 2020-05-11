@@ -418,7 +418,7 @@ void FacultyRecord1::option10(){
     }// end if
 }
 
-//ask lucas 
+//ask lucas
 void FacultyRecord1::option12(){
   //Remove an advisee from a faculty member given the ids
   string Fid;

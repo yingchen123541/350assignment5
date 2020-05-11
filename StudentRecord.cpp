@@ -280,6 +280,8 @@ BST<string> *masterStudent = new BST<string>;
   string Major;
   string studentGPA;
   string studentAdv;
+  string StudentID;
+  int StudentID1;
   //string comma=",";
   cout << "confirm student ID" << endl;
   cin >> studentid;
