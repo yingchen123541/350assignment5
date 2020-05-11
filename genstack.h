@@ -1,8 +1,8 @@
 //Nidhi vedantam
 //2328859
 // based on the algorithm given in the textbook
-#ifndef GENSTACK1_H
-#define GENSTACK1_H
+#ifndef GENSTACK_H
+#define GENSTACK_H
 #include <iostream>
 #include "StackEx.h"
 
@@ -21,7 +21,7 @@ class genstack
 
     //main functions
     //insert
-    void push(const T& t);
+    void push(char t);
     //remove
     void pop() throw(StackEx);
 
@@ -29,7 +29,7 @@ class genstack
     //returns how many elements are in the stack
     int currentsize() const;
     //returns the top element
-    const T& top() const throw(StackEx);
+    char top() const throw(StackEx);
     //returns true or false of the stack is empty
     bool isEmpty() const;
     //returns true or false of the stack if full
@@ -41,6 +41,7 @@ class genstack
     T* myArray;
     int cap;
     int first;
+    char t;
 
 };
 

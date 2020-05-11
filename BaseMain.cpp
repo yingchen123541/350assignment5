@@ -21,6 +21,11 @@ int main(){
   int StudentID1;
   string inputStudentID;
 
+  genstack<char> rbstack;
+  char addS = '0';
+  char delS = '1';
+  char addF = '2';
+  char delF = '3';
 
 
   ifstream FacultyFile;
@@ -28,7 +33,7 @@ int main(){
   string FacultyID;
   int FacultyID1;
   string inputFacultyID;
-
+//create rollback object which is a Stack
 
 //output menu information
    for (int i=0; i<1000; i++){
@@ -53,6 +58,7 @@ int main(){
     //make changes to original fac txt
    cout << "9. Add a new faculty member" << endl;
    //we have to make additional changes to the original file
+
    cout << "10. Delete a faculty member given the id." << endl;
    //make changes to original student txt
    cout << "11. Change a student’s advisor given the student id and the new faculty id." << endl;
@@ -60,6 +66,7 @@ int main(){
    cout << "12. Remove an advisee from a faculty member given the ids" << endl;
    //rewrite file
    cout << "13. Rollback" << endl;
+   //simulates an undo but not properly
    cout << "14. Exit" << endl;
    cout << "enter a number between 1-14 to choose an item from the menu" << endl;
 
@@ -68,6 +75,10 @@ int main(){
 
    StudentRecord* printstud = new StudentRecord();
    FacultyRecord1* printfacu = new FacultyRecord1();
+
+   // 0 = Add student , 1 = delete student
+   // 2 = add faculty, 3 = delete faculty
+
 
    if (choice==1)
    {
@@ -111,20 +122,30 @@ int main(){
    else if (choice==7)
    {
      cout << endl;
-     cout << "OPTION 7: " << endl;
+     cout << "OPTION 7: pushing onto the stack.." << endl;
+    //cout << rbstack.currentsize() << endl;
+
+    rbstack.push(addS);
+    cout << "stack size:" << rbstack.currentsize() << endl;
      printstud -> option7();
-     //code
+     
    }//end else if
    else if (choice==8)
    {
      cout << endl;
      cout << "OPTION 8: " << endl;
+     rbstack.push(delS);
+     cout << "stack size:" << rbstack.currentsize() << endl;
      printstud -> option8();
+
+
      //code
    }//end else if
    else if (choice==9)
    {
      cout << endl;
+     rbstack.push(2);
+     cout << "stack size:" << rbstack.currentsize() << endl;
      cout << "OPTION 9: " << endl;
      printfacu -> option9();
      //code
@@ -133,8 +154,12 @@ int main(){
    {
      cout << "Delete a faculty member given the id." << endl;
      cout << endl;
+     rbstack.push(delF);
+     cout << "stack size:" << rbstack.currentsize() << endl;
      cout << "OPTION 10: " << endl;
      printfacu -> option10();
+    // rollbackobject.setAddFac(true);
+    //add to stack rollback.insert
      //code
    }//end else if
    else if (choice==11)
@@ -151,7 +176,18 @@ int main(){
    }//end else if
    else if (choice==13)
    {
-     cout << "Rollback" << endl;
+     cout << "Rollback... " << endl;
+     if (rbstack.top() == '0'){
+       int inp;
+       cout << "Do you wish to delete the recently added student? (0- no, 1-yes)" << endl;
+       cin >> inp;
+       if(inp == 1){
+         cout << "removing students from database... to confirm enter the students info." << endl;
+         printstud -> option8();
+       }
+       rbstack.pop();
+     }
+
      //code
    }//end else if
    else if (choice==14)

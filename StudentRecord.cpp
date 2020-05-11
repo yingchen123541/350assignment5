@@ -278,7 +278,7 @@ void StudentRecord::option8(){
   string studentGPA;
   string studentAdv;
   //string comma=",";
-  cout << "enter student ID" << endl;
+  cout << "confirm student ID" << endl;
   cin >> studentid;
   cout << "enter student name" << endl;
   cin >> studentName;
@@ -320,7 +320,7 @@ void StudentRecord::option8(){
 
 }//end option 7
 
-//ask lucas 
+//ask lucas
 void StudentRecord::option11(){
   string O11StudentID;
   string O11FacultyID;
