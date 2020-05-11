@@ -117,7 +117,9 @@ int main(){
    }//end else if
    else if (choice==9)
    {
-     cout << "Add a new faculty member" << endl;
+     cout << endl;
+     cout << "OPTION 9: " << endl;
+     printfacu -> option9();
      //code
    }//end else if
    else if (choice==10)
