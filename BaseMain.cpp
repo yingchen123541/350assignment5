@@ -3,7 +3,7 @@
 // tree name: masterFaculty, masterStudent
 #include "binarytree.cpp"
 #include "FacultyRecord1.h"
-#include "Rollback.h"
+//#include "Rollback.h"
 #include "genstack.cpp"
 
 //#include "StudentRecord.cpp"
