@@ -1,10 +1,6 @@
 //open and read from two files (student and faculty) and add information into trees
 //if those two files don't exist initialize two empty trees
 // tree name: masterFaculty, masterStudent
-
-
-
-
 #include "binarytree.cpp"
 #include "FacultyRecord1.h"
 //#include "StudentRecord.cpp"
@@ -47,11 +43,17 @@ int main(){
    cout << "5. Given a student’s id, print the name and info of their faculty advisor" << endl;
    cout << "6. Given a faculty id, print ALL the names and info of his/her advisees." << endl;
    cout << "7. Add a new student" << endl;
+   // add to tree and add to file student txt
+   // make changes to original fac txt
    cout << "8. Delete a student given the id" << endl;
+    //make changes to original fac txt
    cout << "9. Add a new faculty member" << endl;
    cout << "10. Delete a faculty member given the id." << endl;
+   //make changes to original student txt
    cout << "11. Change a student’s advisor given the student id and the new faculty id." << endl;
+   //check if fac exists, then change ID
    cout << "12. Remove an advisee from a faculty member given the ids" << endl;
+   //rewrite file
    cout << "13. Rollback" << endl;
    cout << "14. Exit" << endl;
    cout << "enter a number between 1-14 to choose an item from the menu" << endl;
