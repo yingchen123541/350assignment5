@@ -327,52 +327,84 @@ BST<string> *masterStudent = new BST<string>;
 
 //ask lucas
 void StudentRecord::option11(){
+  BST<string> *masterStudent = new BST<string>;
   string O11StudentID;
+  int O11StudentID1;
   string O11FacultyID;
   int NumLine=0;
   int findline;
   string sCharacter;
+
   //Change a student’s advisor given the student id and the new faculty id.
   cout << "enter student ID" << endl;
   cin >> O11StudentID;
   cout << "enter new faculty ID" << endl;
   cin >> O11FacultyID;
+  string out;
 
   ofstream OutputFile3;
-  OutputFile3.open("studentTable4.txt", ios::app);
-
+  OutputFile3.open("studentTable4");
+  //OutputFile3.open("studentTable4.txt", ios::app);
+  int i=0;
   StudentFile.open("studentTable.txt");
   if (StudentFile)
   {
-    while (getline(StudentFile, StudentLine))
-    {
-
+   while (i<6)
+   {
+     i=i+1;
+     getline(StudentFile, StudentLine);
       NumLine=NumLine+1;
       StudentID = StudentLine.substr(0,1);
       StudentID1 = stoi(StudentID);
       if(StudentID!=O11StudentID){
       OutputFile3 << StudentLine << endl;
+      masterStudent -> insert(StudentLine, StudentID1);
+    //  cout << StudentLine << endl;
 
     }
       else if(StudentID==O11StudentID)
       {
-            cout << "find the student at line " << NumLine << endl;
+        O11StudentID1=stoi(O11StudentID);
+            //cout << "find the student at line " << NumLine << endl;
             findline= NumLine;
             for (int i=0; i<StudentLine.length()-2; ++i){
                sCharacter = StudentLine.substr(i,1);
                if(StudentID==O11StudentID){
               OutputFile3 << sCharacter;
+              out=out+sCharacter;
+
+            //  cout << sCharacter;
+
+
             }
+
             }//end for
-            OutputFile3 << " " << O11FacultyID << '\n';
+
+          //  OutputFile3 << " " << O11FacultyID << '\n';
+          out=out+ " " + O11FacultyID;
+            masterStudent -> insert(out, O11StudentID1);
+           //cout << " " << O11FacultyID << '\n';
+
 
           }//end else if
 
 
 
 
+
 }//end while
+
+
 }//end if
+//string haha =masterStudent -> printRoot();
+masterStudent->PrintFileR(OutputFile3);
+//masterStudent -> printRoot();
+//cout << masterStudent -> printRoot() << endl;
+
+StudentFile.close();
+//OutputFile3.open("studentTable4.txt");
+//OutputFile3 << haha << endl;
+
 
 }//end option11
 
