@@ -358,7 +358,7 @@ void StudentRecord::option11(){
       StudentID1 = stoi(StudentID);
       if(StudentID!=O11StudentID){
       OutputFile3 << StudentLine << endl;
-      masterStudent -> insert(StudentLine, StudentID1);
+      //masterStudent -> insert(StudentLine, StudentID1);
     //  cout << StudentLine << endl;
 
     }
@@ -380,9 +380,9 @@ void StudentRecord::option11(){
 
             }//end for
 
-          //  OutputFile3 << " " << O11FacultyID << '\n';
+           OutputFile3 << " " << O11FacultyID << '\n';
           out=out+ " " + O11FacultyID;
-            masterStudent -> insert(out, O11StudentID1);
+          //  masterStudent -> insert(out, O11StudentID1);
            //cout << " " << O11FacultyID << '\n';
 
 
@@ -397,12 +397,17 @@ void StudentRecord::option11(){
 
 }//end if
 //string haha =masterStudent -> printRoot();
+
 masterStudent->PrintFileR(OutputFile3);
+
+
+//masterStudent->PrintFileR(OutputFile3);
 
 //masterStudent -> printRoot();
 //cout << masterStudent -> printRoot() << endl;
 
-StudentFile.close();
+//StudentFile.close();
+//OutputFile3.close();
 //OutputFile3.open("studentTable4.txt");
 //OutputFile3 << haha << endl;
 
