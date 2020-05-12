@@ -379,6 +379,27 @@ void StudentRecord::option11(){
 
 
 }//end if
+<<<<<<< HEAD
+=======
+//string haha =masterStudent -> printRoot();
+
+masterStudent->PrintFileR(OutputFile3);
+
+
+//masterStudent->PrintFileR(OutputFile3);
+
+//masterStudent -> printRoot();
+//cout << masterStudent -> printRoot() << endl;
+
+//StudentFile.close();
+//OutputFile3.close();
+//OutputFile3.open("studentTable4.txt");
+//OutputFile3 << haha << endl;
+
+
+}//end option11
+
+>>>>>>> fa8cc28d88017ffb1fea1983db1ed08050540f1a
 
 
 StudentFile.close();
