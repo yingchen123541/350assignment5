@@ -1,3 +1,0 @@
-8, Philip, associate prof, psychology, [6,7]
-5, Erin, lecturer, graphic design, [2,3]
-7, Bob, assistant prof, English, [4,5]

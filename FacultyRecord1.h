@@ -266,6 +266,7 @@ int numberid1;
 string adviseeID;
 int Line=0;
 int addLine=0;
+int line1=0;
 
 GenLinkedList<int> *advlist = new GenLinkedList<int>;
 cout << "enter a faculty ID to print their advisees " << endl;
@@ -281,21 +282,25 @@ if (FacultyFile)
     // cout << FacultyID << endl;
      if(FacultyID==adviseeID)
      {
-    //   cout << "at line " << Line << "find the faculty" << endl;
+       cout << "at line " << Line << "find the faculty" << endl;
+       line1=Line;
      }//end if
   }//end while
 }//end if
 FacultyFile.close();
+//cout << "Line1 " << line1;
 //open the file again to read till reach Line with certain faculty
 FacultyFile.open("facultyTable.txt");
 if (FacultyFile)
 {
   while(getline(FacultyFile, FacultyLine)){
    addLine=addLine+1;
-   if(addLine==Line){
+   if(addLine==line1){
+    // cout << addLine << "addLine" << endl;
+    // cout << Line << "Line" << endl;
      for (int i=2; i<=FacultyLine.length(); ++i){
      string O6Character = FacultyLine.substr(i,1);
-     //cout << O6Character << endl;
+    // cout << O6Character << endl;
      if (O6Character=="0" || O6Character=="1" || O6Character=="2" || O6Character=="3" || O6Character=="4" || O6Character=="5" || O6Character=="6" || O6Character=="7" || O6Character=="8" || O6Character=="9"){
      numberid=O6Character;
      numberid1=stoi(numberid);
@@ -450,6 +455,7 @@ void FacultyRecord1::option12(){
              if(a!=Sid)
              OutputFile5 << a;
            }//end for
+           OutputFile5 << endl;
          }//end if
          if(find!=tline){
          cout << FacultyLine << endl;
@@ -459,6 +465,21 @@ void FacultyRecord1::option12(){
        }//end while
 
      }//end if
+
+     OutputFile5.close();
+     FacultyFile.close();
+
+     FacultyFile.open("facultyTable5.txt");
+     OutputFile5.open("facultyTable.txt");
+
+     if(FacultyFile){
+       while (getline(FacultyFile, FacultyLine)){
+          OutputFile5 << FacultyLine << endl;
+       }//end while
+     }//end if
+
+    FacultyFile.close();
+    OutputFile5.close();
 
 
 

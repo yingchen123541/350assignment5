@@ -325,7 +325,7 @@ BST<string> *masterStudent = new BST<string>;
 
 }//end option 7
 
-//ask lucas
+
 void StudentRecord::option11(){
   BST<string> *masterStudent = new BST<string>;
   string O11StudentID;
@@ -340,11 +340,10 @@ void StudentRecord::option11(){
   cin >> O11StudentID;
   cout << "enter new faculty ID" << endl;
   cin >> O11FacultyID;
-  string out;
+
 
   ofstream OutputFile3;
-  OutputFile3.open("studentTable4");
-  //OutputFile3.open("studentTable4.txt", ios::app);
+  OutputFile3.open("studentTable4.txt");
   int i=0;
   StudentFile.open("studentTable.txt");
   if (StudentFile)
@@ -358,65 +357,47 @@ void StudentRecord::option11(){
       StudentID1 = stoi(StudentID);
       if(StudentID!=O11StudentID){
       OutputFile3 << StudentLine << endl;
-      //masterStudent -> insert(StudentLine, StudentID1);
-    //  cout << StudentLine << endl;
 
     }
       else if(StudentID==O11StudentID)
       {
-        O11StudentID1=stoi(O11StudentID);
-            //cout << "find the student at line " << NumLine << endl;
+      //  O11StudentID1=stoi(O11StudentID);
+            cout << "find the student at line " << NumLine << endl;
             findline= NumLine;
             for (int i=0; i<StudentLine.length()-2; ++i){
                sCharacter = StudentLine.substr(i,1);
                if(StudentID==O11StudentID){
               OutputFile3 << sCharacter;
-              out=out+sCharacter;
-
-            //  cout << sCharacter;
-
-
             }
 
             }//end for
 
            OutputFile3 << " " << O11FacultyID << '\n';
-          out=out+ " " + O11FacultyID;
-          //  masterStudent -> insert(out, O11StudentID1);
-           //cout << " " << O11FacultyID << '\n';
-
-
           }//end else if
-
-
-
-
 
 }//end while
 
 
 }//end if
-//string haha =masterStudent -> printRoot();
-//masterStudent->PrintFileR(OutputFile3);
-//OutputFile3 << '\n';
-//masterStudent -> printRoot();
-//cout << masterStudent -> printRoot() << endl;
-
-//StudentFile.close();
-//OutputFile3.close();
-//OutputFile3.open("studentTable4.txt");
-//OutputFile3 << haha << endl;
 
 
-}//end option11
+StudentFile.close();
+OutputFile3.close();
+
+StudentFile.open("studentTable4.txt");
+OutputFile3.open("studentTable.txt");
+
+if (StudentFile){
+  while (getline(StudentFile, StudentLine)){
+    OutputFile3 << StudentLine << endl;
+  }//end while
+}//end if
+
+StudentFile.close();
+OutputFile3.close();
 
 
-
-
-
-
-
-
+}
 
 
 
