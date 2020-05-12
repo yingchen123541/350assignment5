@@ -1,4 +1,4 @@
-/** FacultyRecord1
+/** FacultyRecord1.h
 * Name1: Yuki Chen
 * Student ID1: 2320235
 * Email1: yingchen@chapman.edu
@@ -515,7 +515,7 @@ void FacultyRecord1::option12(){
      OutputFile5.open("facultyTable.txt");
 
      if(FacultyFile){
-       //read from the file and get the lines 
+       //read from the file and get the lines
        while (getline(FacultyFile, FacultyLine)){
           OutputFile5 << FacultyLine << endl;
        }//end while

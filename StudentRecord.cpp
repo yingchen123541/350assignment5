@@ -1,3 +1,15 @@
+/** StudentRecord.cpp
+* Name1: Yuki Chen
+* Student ID1: 2320235
+* Email1: yingchen@chapman.edu
+* Name2: Nidhi Vedantam
+* Student ID2: 2328859
+* Email2: vedantam@chapman.edu
+* Assignment5
+* purpose: define variables used in studentRecord.cpp
+* Date: May 12, 2020
+*/
+
 #include "StudentRecord.h"
  #include <algorithm>
 
@@ -20,7 +32,7 @@ StudentRecord::StudentRecord(int a, string b, string c, string d, double e, int 
     gpa = e;
     advisor = f;
 }
-
+//destructor
 StudentRecord::~StudentRecord()
 {
 
@@ -30,7 +42,7 @@ StudentRecord::~StudentRecord()
 void StudentRecord::setID(int a){
   studID = a;
 }
-
+//getter and setter
 int StudentRecord::getID(){
   return studID;
 }
@@ -119,11 +131,13 @@ void StudentRecord::option3(){
   cout << "enter a student ID to display student information" << endl;
   cin >> inputStudentID;
   int inputStudentID1;
+  //convert string to int
   inputStudentID1 = stoi(inputStudentID);
 
   StudentFile.open("studentTable.txt");
   if (StudentFile)
   {
+    //initialize tree
     BST<string> *masterStudent = new BST<string>;
     while (getline(StudentFile, StudentLine))
     {
@@ -134,6 +148,7 @@ void StudentRecord::option3(){
     bool findStudent;
     findStudent = masterStudent->search(inputStudentID1);
     if(findStudent==true){
+      //find the student Id
     cout << "studentID exist" << endl;
     masterStudent->returnT(inputStudentID1);
     }//end if
@@ -152,7 +167,7 @@ void StudentRecord::option8(){
   ofstream OutputFile;
   int inputStudentID1;
   inputStudentID1 = stoi(inputStudentID);
-
+//read from a file then output to another file
   StudentFile.open("studentTable.txt");
   OutputFile.open("studentTable1.txt");
   if (StudentFile)
@@ -161,8 +176,10 @@ void StudentRecord::option8(){
     cout << "delete student with ID " << inputStudentID1 << endl;
     while (getline(StudentFile, StudentLine))
     {
+      //read in the first character as ID
         StudentID = StudentLine.substr(0,1);
         StudentID1 = stoi(StudentID);
+        //insert information into tree
         masterStudent->insert(StudentLine,StudentID1);
         if(StudentID1!=inputStudentID1){
           OutputFile << StudentLine <<  endl;
@@ -184,6 +201,7 @@ void StudentRecord::option8(){
 
     if (StudentFile)
     {
+      //output to a file
       while (getline(StudentFile, StudentLine)){
           OutputFile << StudentLine <<  endl;
       }// end while
@@ -208,7 +226,7 @@ BST<string> *masterStudent = new BST<string>;
   {
     //   if(addLine==Line){
         // if(addLine==Line){
-
+//making changes to faculty file when change in student file
             O6Character = FacultyLine.substr(0,1);
             O6Character1=stoi(O6Character);
            if (O6Character1 == inputStudentID1){
@@ -217,7 +235,7 @@ BST<string> *masterStudent = new BST<string>;
           cout << "numberid1 " << numberid1 << endl;
          for (int i=2; i<=FacultyLine.length(); ++i){
          }
-
+//insert into tree
        masterStudent->insert(StudentLine,StudentID1);
        if(StudentID1!=inputStudentID1){
          OutputFile << StudentLine <<  endl;
@@ -247,7 +265,7 @@ BST<string> *masterStudent = new BST<string>;
 
     OutputFile.close();
     StudentFile.close();
-    // 
+    //
     // ifstream temFile;
     // string temLine;
     // string newF;
@@ -292,6 +310,7 @@ BST<string> *masterStudent = new BST<string>;
   string StudentID;
   int StudentID1;
   //string comma=",";
+  //get input from user
   cout << "enter student ID" << endl;
   cin >> studentid;
   cout << "enter student name" << endl;
@@ -323,6 +342,8 @@ BST<string> *masterStudent = new BST<string>;
    if (StudentFile)
    {
      //add new students into tree
+
+     //initialize tree
      BST<string> *masterStudent = new BST<string>;
      while (getline(StudentFile, StudentLine))
      {
@@ -370,6 +391,7 @@ BST<string> *masterStudent = new BST<string>;
 
 
 void StudentRecord::option11(){
+  //initialize tree
   BST<string> *masterStudent = new BST<string>;
   string O11StudentID;
   int O11StudentID1;
@@ -379,6 +401,7 @@ void StudentRecord::option11(){
   string sCharacter;
 
   //Change a student’s advisor given the student id and the new faculty id.
+  //get input from user
   cout << "enter student ID" << endl;
   cin >> O11StudentID;
   cout << "enter new faculty ID" << endl;
@@ -391,12 +414,14 @@ void StudentRecord::option11(){
   StudentFile.open("studentTable.txt");
   if (StudentFile)
   {
+    //print 7 times cause there are 7 lines in file
    while (i<6)
    {
      i=i+1;
      getline(StudentFile, StudentLine);
       NumLine=NumLine+1;
       StudentID = StudentLine.substr(0,1);
+      //convert string to int
       StudentID1 = stoi(StudentID);
       if(StudentID!=O11StudentID){
       OutputFile3 << StudentLine << endl;
@@ -407,6 +432,7 @@ void StudentRecord::option11(){
       //  O11StudentID1=stoi(O11StudentID);
             cout << "find the student at line " << NumLine << endl;
             findline= NumLine;
+            //don't read in the last two character
             for (int i=0; i<StudentLine.length()-2; ++i){
                sCharacter = StudentLine.substr(i,1);
                if(StudentID==O11StudentID){
@@ -431,6 +457,7 @@ StudentFile.open("studentTable4.txt");
 OutputFile3.open("studentTable.txt");
 
 if (StudentFile){
+  //read all lines then outpue to a file
   while (getline(StudentFile, StudentLine)){
     OutputFile3 << StudentLine << endl;
   }//end while
@@ -441,11 +468,3 @@ OutputFile3.close();
 
 
 }
-
-
-
-
-//add an add functions
-//add a delete functions
-//print advisor function?
-//print all students function

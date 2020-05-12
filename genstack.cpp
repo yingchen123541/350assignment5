@@ -1,4 +1,4 @@
-/** GenLinkedList.h
+/** genstack.cpp
 * Name1: Yuki Chen
 * Student ID1: 2320235
 * Email1: yingchen@chapman.edu

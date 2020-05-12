@@ -1,4 +1,15 @@
 
+/** StudentRecord.h
+* Name1: Yuki Chen
+* Student ID1: 2320235
+* Email1: yingchen@chapman.edu
+* Name2: Nidhi Vedantam
+* Student ID2: 2328859
+* Email2: vedantam@chapman.edu
+* Assignment5
+* purpose: define all variables used in student record.cpp
+* Date: May 12, 2020
+*/
 #include <iostream>
 #include <fstream>
 
@@ -32,8 +43,7 @@ class StudentRecord{
       void option7();
       void option8();
       void option11();
-
-////////////
+//define variables
      std::string m_StudentLine;
      std::string m_StudentID;
      int m_StudentID1;

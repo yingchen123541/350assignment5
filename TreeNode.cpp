@@ -1,3 +1,14 @@
+/** TreeNode.cpp
+* Name1: Yuki Chen
+* Student ID1: 2320235
+* Email1: yingchen@chapman.edu
+* Name2: Nidhi Vedantam
+* Student ID2: 2328859
+* Email2: vedantam@chapman.edu
+* Assignment5
+* purpose: tree node class to make node for tree
+* Date: May 12, 2020
+*/
 #include "TreeNode.h"
 //default constructor
 template <class T>
@@ -24,34 +35,3 @@ TreeNode<T>::~TreeNode(){
     delete left;
     delete right;
   }
-//ignore non tempalte code
-// public:
-//     TreeNode();
-//     TreeNode(int key);
-//   //  TreeNode(int key, <type> value) another way
-//     ~TreeNode();
-//     // when working with template classes, virtual key word
-//     // research what that means
-//
-//     int key;
-//     TreeNode *left;
-//     TreeNode *right;
-//
-// };
-//
-// // tree implementation
-// //default
-// TreeNode::TreeNode(){
-//   key =0;
-//   left = NULL;
-//   right = NULL;
-// }
-// // overloaded
-// TreeNode::TreeNode(int key){
-//   key = k;
-//   left = NULL;
-//   right = NULL;
-// }
-// //deconstructor
-// ~TreeNode::TreeNode(){
-//   // do this
