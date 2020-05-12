@@ -22,7 +22,9 @@ using namespace std;
 template <class T>
 class BST{
 public:
+  //constructor
   BST();
+  //destructor
   ~BST();
 
   //core functions

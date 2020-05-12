@@ -1,3 +1,8 @@
+8, Philip, associate prof, psychology, [,7]
+9, Katie, lecturer, music, [8,9]
+5, Erin, lecturer, graphic design, [2,3]
+7, Bob, assistant prof, English, [4,5]
+8, Philip, associate prof, psychology, [6,7]
 9, Katie, lecturer, music, [8,9]
 5, Erin, lecturer, graphic design, [2,3]
 7, Bob, assistant prof, English, [4,5]

@@ -151,7 +151,7 @@ int FacultyRecord1::getNumAdvisees(){
   return advlist->getSize();
 }
 
-//option functions: opening and inserting 
+//option functions: opening and inserting
 void FacultyRecord1::option2(){
  //open and read from faculty file
  FacultyFile.open("facultyTable.txt");
@@ -281,11 +281,12 @@ string adviseeID;
 int Line=0;
 int addLine=0;
 int line1=0;
-
+//initialize adv linkedlist
 GenLinkedList<int> *advlist = new GenLinkedList<int>;
 cout << "enter a faculty ID to print their advisees " << endl;
 cin >> adviseeID;
 cout << endl;
+//open faculty file to read from it
 FacultyFile.open("facultyTable.txt");
 
 if (FacultyFile)
@@ -296,6 +297,7 @@ if (FacultyFile)
     // cout << FacultyID << endl;
      if(FacultyID==adviseeID)
      {
+       //find the faculty at certain line
        cout << "at line " << Line << "find the faculty" << endl;
        line1=Line;
      }//end if
@@ -310,20 +312,20 @@ if (FacultyFile)
   while(getline(FacultyFile, FacultyLine)){
    addLine=addLine+1;
    if(addLine==line1){
-    // cout << addLine << "addLine" << endl;
-    // cout << Line << "Line" << endl;
+    //read from the file without the faculty ID
      for (int i=2; i<=FacultyLine.length(); ++i){
      string O6Character = FacultyLine.substr(i,1);
     // cout << O6Character << endl;
      if (O6Character=="0" || O6Character=="1" || O6Character=="2" || O6Character=="3" || O6Character=="4" || O6Character=="5" || O6Character=="6" || O6Character=="7" || O6Character=="8" || O6Character=="9"){
      numberid=O6Character;
      numberid1=stoi(numberid);
-    cout << "numberid1 " << numberid1 << endl;
+  //  cout << "numberid1 " << numberid1 << endl;
 
     //open and read from student class and insert into tree
      StudentFile.open("studentTable.txt");
      if (StudentFile)
      {
+       //initialize master student tree
        BST<string> *masterStudent = new BST<string>;
        while (getline(StudentFile, StudentLine))
        {
@@ -357,6 +359,7 @@ void FacultyRecord1::option9(){
   string department;
   string advisee;
   //string comma=",";
+  //get input from user
   cout << "enter faculty ID" << endl;
   cin >> facultyid;
   cout << "enter faculty name" << endl;
@@ -367,13 +370,13 @@ void FacultyRecord1::option9(){
   cin >> department;
   cout << "enter advisees, in the form of [1,2]" << endl;
   cin >> advisee;
-
+//add space in between when output to a file
   OutputFile2 << facultyid << " ";
   OutputFile2 << facultyName << " ";
   OutputFile2 << facultyLevel << " ";
   OutputFile2 << department << " ";
   OutputFile2 << advisee << " " << "\n";
-
+//close the file
   OutputFile2.close();
 
   FacultyFile.open("facultyTable.txt");
@@ -383,6 +386,7 @@ void FacultyRecord1::option9(){
     BST<string> *masterFaculty = new BST<string>;
     while (getline(FacultyFile, FacultyLine))
     {
+      //read the first character in as ID
       FacultyID = FacultyLine.substr(0,1);
       FacultyID1 = stoi(FacultyID);
       masterFaculty->insert(FacultyLine,FacultyID1);
@@ -397,16 +401,19 @@ void FacultyRecord1::option10(){
   cin >> inputFacultyID;
   ofstream OutputFile;
   int inputFACID1;
+  //convert string to int
   inputFACID1 = stoi(inputFacultyID);
 
   FacultyFile.open("facultyTable.txt");
   OutputFile.open("facultyTable1.txt");
   if (FacultyFile)
   {
+    //initialize faculty tree
     BST<string> *masterFaculty = new BST<string>;
     cout << "delete faculty with ID " << inputFACID1 << endl;
     while (getline(FacultyFile, FacultyLine))
     {
+      //read in first character as ID
         FacultyID = FacultyLine.substr(0,1);
         FacultyID1 = stoi(FacultyID);
         masterFaculty->insert(FacultyLine,FacultyID1);
@@ -477,6 +484,7 @@ void FacultyRecord1::option12(){
      while (getline(FacultyFile, FacultyLine))
      {
        tline=tline+1;
+       //convert string to int
          FacultyID = FacultyLine.substr(0,1);
          FacultyID1 = stoi(FacultyID);
          if(FacultyID==Fid)
@@ -499,7 +507,7 @@ void FacultyRecord1::option12(){
        }//end while
 
      }//end if
-
+//close the file
      OutputFile5.close();
      FacultyFile.close();
 
@@ -507,6 +515,7 @@ void FacultyRecord1::option12(){
      OutputFile5.open("facultyTable.txt");
 
      if(FacultyFile){
+       //read from the file and get the lines 
        while (getline(FacultyFile, FacultyLine)){
           OutputFile5 << FacultyLine << endl;
        }//end while

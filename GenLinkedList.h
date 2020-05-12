@@ -1,3 +1,15 @@
+/** GenLinkedList.h
+* Name1: Yuki Chen
+* Student ID1: 2320235
+* Email1: yingchen@chapman.edu
+* Name2: Nidhi Vedantam
+* Student ID2: 2328859
+* Email2: vedantam@chapman.edu
+* Assignment5
+* purpose: to make a data structure of linkedlist 
+* Date: May 12, 2020
+*/
+
 #include <iostream>
 #include "DListNode.h"
 
@@ -215,7 +227,7 @@ T GenLinkedList<T>::getFront(){
   return temp;
 }
 
-//return the back value 
+//return the back value
 template <class T>
 T GenLinkedList<T>::getBack(){
   if(size==0){

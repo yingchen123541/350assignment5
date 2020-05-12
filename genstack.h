@@ -1,5 +1,15 @@
-//Nidhi vedantam
-//2328859
+/** GenLinkedList.h
+* Name1: Yuki Chen
+* Student ID1: 2320235
+* Email1: yingchen@chapman.edu
+* Name2: Nidhi Vedantam
+* Student ID2: 2328859
+* Email2: vedantam@chapman.edu
+* Assignment5
+* purpose: to make a data structure of stack for rollback
+* Date: May 12, 2020
+*/
+
 // based on the algorithm given in the textbook
 #ifndef GENSTACK_H
 #define GENSTACK_H
@@ -46,27 +56,3 @@ class genstack
 };
 
 #endif
-
-//cpp in the header file
-
-//template class also known as general classes
-
-// template <class T>
-// //default constructor
-// genstack<T>::genstack(){
-//
-//   myArray = new char[mSize];
-//   mSize = 128;
-//   top = -1;
-//
-// }
-// //overloaded constructor
-// template <class T>
-// genstack<T>::genstack(int max){
-//
-//   myArray = new char[max];
-//   mSize = max;
-//   top = -1;
-//
-// }
-//

@@ -1,3 +1,18 @@
+/** GenLinkedList.h
+* Name1: Yuki Chen
+* Student ID1: 2320235
+* Email1: yingchen@chapman.edu
+* Name2: Nidhi Vedantam
+* Student ID2: 2328859
+* Email2: vedantam@chapman.edu
+* Assignment5
+* purpose: to make a data structure of stack for rollback
+* Date: May 12, 2020
+*/
+
+
+
+
 #include "genstack.h"
 //inclduing header class
 
@@ -27,18 +42,7 @@ void genstack<T>::push(char t){
   //first checking if the stack is empty
   //if (!this->isFull()){
     myArray[++first] = t;
-  // }else{
-  //   //increase the size of the stack
-  //   cap *= 2;
-  //   char* newArray = new char[cap];
-  //   for (int i = 0; i < this->currentsize(); ++i){
-  //     newArray[i] = myArray[i];
-  //   }
-  //   myArray = newArray;
-  //   this->myArray[++first] = t;
-  //   newArray = NULL;
-  //   delete [] newArray;
-//  }
+
 }
 //popping values off the stack
 template <typename T>
@@ -80,10 +84,3 @@ template <typename T>
 void genstack<T>::remove(){
   this->first = -1;
 }
-
-
-
-/////////////////////
-// #include "genstack.h"
-
-// //////////////
