@@ -225,7 +225,7 @@ BST<string> *masterStudent = new BST<string>;
        }//end if
        else if (StudentID1!=inputStudentID1)
        {
-         cout << "delete student" << endl;
+      //   cout << "delete student" << endl;
        }//end else if
 
    }//end while
@@ -245,21 +245,31 @@ BST<string> *masterStudent = new BST<string>;
    }// end while
  }// end if
 
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////////////////////////
-
-
     OutputFile.close();
     StudentFile.close();
+    // 
+    // ifstream temFile;
+    // string temLine;
+    // string newF;
+    // int l;
+    // int l1;
+    // temFile.open("facultyTable.txt");
+    // if (temFile)
+    // {
+    //   while (getline(temFile, temLine))
+    //   {
+    //     l=l+1;
+    //       for(int i=2; i<=temLine.length(); ++i){
+    //          newF = temLine.substr(i,1);
+    //          if(newF==inputStudentID){
+    //            l=l1;
+    //            cout << "find advisee at line " << l1 << endl;
+    //            cout << newF << endl;
+    //          }
+    //        }//end for
+    //   }// end while
+    // //  cout << newF << endl;
+    // }//end if
 
 
 
@@ -269,6 +279,7 @@ BST<string> *masterStudent = new BST<string>;
 
 
   void StudentRecord::option7(){
+    ifstream FacultyFile;
     ofstream OutputFile1;
     OutputFile1.open("studentTable.txt", ios::app);
   //add a new student into tree and write to the file
@@ -320,6 +331,40 @@ BST<string> *masterStudent = new BST<string>;
        masterStudent->insert(StudentLine,StudentID1);
      }// end while
    }// end if
+ //   FacultyFile.open("facultyTable.txt");
+ //   int Ll=0;
+ //   int Ll1=0;
+ //   if(FacultyFile){
+ //   while (getline(FacultyFile, FacultyLine))
+ //   {
+ //     Ll=Ll+1;
+ //     FacultyID = FacultyLine.substr(0,1);
+ //     FacultyID1 = stoi(FacultyID);
+ //     if(studentAdv==FacultyID){
+ //       cout << "faculty exist at line " << Ll << endl;
+ //       Ll=Ll1;
+ //     }//end if
+ //   }//end while
+ // }//end if
+ // FacultyFile.close();
+ //
+ // FacultyFile.open("facultyTable.txt");
+ //
+ // if (FacultyFile)
+ // {
+ //   while(getline(FacultyFile, FacultyLine)){
+ //    int adddLine=adddLine+1;
+ //    if(adddLine==Ll1){
+ //
+ //    }//end if
+ //
+ //   }//end while
+ // }//end if
+ //
+ //
+ //
+ //
+
 
 }//end option 7
 

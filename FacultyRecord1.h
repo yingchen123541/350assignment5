@@ -379,7 +379,7 @@ void FacultyRecord1::option9(){
 }//end option 9
 
 void FacultyRecord1::option10(){
-  cout << "enter a faculty ID to delete student information" << endl;
+  cout << "enter a faculty ID to delete a faculty" << endl;
   cin >> inputFacultyID;
   ofstream OutputFile;
   int inputFACID1;
@@ -421,9 +421,29 @@ void FacultyRecord1::option10(){
       }// end while
 
     }// end if
-}
 
-//ask lucas
+// int l=0;
+// int l1=0;
+//
+//     StudentFile.open("studentTable.txt");
+//     if(StudentFile){
+//       while (getline(StudentFile, StudentLine))
+//       {
+//         l=l+1;
+//           for (int i=0; i<=StudentLine.length(); ++i){
+//             string ch = StudentLine.substr(i,1);
+//             if(i=StudentLine.length())
+//
+//           if(ch==inputFacultyID){
+//             cout << "find the faculty Id at line " << l << endl;
+//           }//end if
+//         }//end for
+//         }//end while
+//     }//end if
+
+}//end option 10
+
+
 void FacultyRecord1::option12(){
   //Remove an advisee from a faculty member given the ids
   string Fid;
