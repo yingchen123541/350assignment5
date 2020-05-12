@@ -1,3 +1,17 @@
+/** FacultyRecord1
+* Name1: Yuki Chen
+* Student ID1: 2320235
+* Email1: yingchen@chapman.edu
+* Name2: Nidhi Vedantam
+* Student ID2: 2328859
+* Email2: vedantam@chapman.edu
+* Assignment5
+* purpose: to define faculty database functions for every potential option
+* Date: May 12, 2020
+*/
+
+
+
 #include <iostream>
 #include "GenLinkedList.h"
 #include "StudentRecord.cpp"
@@ -137,7 +151,7 @@ int FacultyRecord1::getNumAdvisees(){
   return advlist->getSize();
 }
 
-//option functions
+//option functions: opening and inserting 
 void FacultyRecord1::option2(){
  //open and read from faculty file
  FacultyFile.open("facultyTable.txt");

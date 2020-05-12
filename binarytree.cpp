@@ -1,3 +1,15 @@
+/** binarytree.cpp
+* Name1: Yuki Chen
+* Student ID1: 2320235
+* Email1: yingchen@chapman.edu
+* Name2: Nidhi Vedantam
+* Student ID2: 2328859
+* Email2: vedantam@chapman.edu
+* Assignment5
+* purpose: to create the datastructure and functions of a binary tree
+* Date: May 12, 2020
+*/
+
 #include "binarytree.h"
 
 //constructor
