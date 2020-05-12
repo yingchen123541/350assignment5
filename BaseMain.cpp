@@ -113,10 +113,9 @@ int main(){
    }//end else if
    else if (choice==6)
    {
-     cout << endl;
-     cout << "OPTION 6: " << endl;
-     printfacu -> option6();
-
+      cout << endl;
+      cout << "OPTION 6: " << endl;
+      printfacu -> option6();
    }//end else if
    else if (choice==7)
    {
